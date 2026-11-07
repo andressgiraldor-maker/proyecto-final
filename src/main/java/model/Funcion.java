@@ -2,46 +2,39 @@ package model;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 public class Funcion {
 
     //Atributos de la clase Funcion
     private String codigo;
     private LocalDate fecha;
-    private LocalDate hora;
+    private LocalTime hora;
     private double valorBase;
-    EsatdoFuncion esatdoFuncion;
+    private EstadoFuncion estadoFuncion;
 
-    //Relaciones de la calse Funcion
+    //Relaciones de la clase Funcion
     private List<Asiento> listFuncionAsientos;
     private Cine cine;
     private List<Venta> listFuncionVentas;
     private Pelicula pelicula;
+    private Sala sala;
 
     /**
      * metodo constructor de la clase Funcion
-     * @param codigo de la funcion
-     * @param fecha de la funcion
-     * @param hora de la funcion
-     * @param valorBase de la funcion
-     * @param esatdoFuncion de la funcion
-     * @param listFuncionAsientos de la funcion
-     * @param cine de la funcion
-     * @param listFuncionVentas de la funcion
-     * @param pelicula de la funcion
      */
-    public Funcion(String codigo, LocalDate fecha, LocalDate hora, double valorBase, EsatdoFuncion esatdoFuncion, List<Asiento> listFuncionAsientos, Cine cine, List<Venta> listFuncionVentas, Pelicula pelicula) {
+    public Funcion(String codigo, LocalDate fecha, LocalTime hora, double valorBase, EstadoFuncion estadoFuncion, List<Asiento> listFuncionAsientos, Cine cine, List<Venta> listFuncionVentas, Pelicula pelicula, Sala sala) {
         this.codigo = codigo;
         this.fecha = fecha;
         this.hora = hora;
         this.valorBase = valorBase;
-        this.esatdoFuncion = esatdoFuncion;
+        this.estadoFuncion = estadoFuncion;
         this.listFuncionAsientos = new ArrayList<>();
         this.cine = cine;
-        this.listFuncionVentas =  new ArrayList<>();
+        this.listFuncionVentas = new ArrayList<>();
         this.pelicula = pelicula;
+        this.sala = sala;
     }
 
     public String getCodigo() {
@@ -60,11 +53,11 @@ public class Funcion {
         this.fecha = fecha;
     }
 
-    public LocalDate getHora() {
+    public LocalTime getHora() {
         return hora;
     }
 
-    public void setHora(LocalDate hora) {
+    public void setHora(LocalTime hora) {
         this.hora = hora;
     }
 
@@ -76,12 +69,12 @@ public class Funcion {
         this.valorBase = valorBase;
     }
 
-    public EsatdoFuncion getEsatdoFuncion() {
-        return esatdoFuncion;
+    public EstadoFuncion getEstadoFuncion() {
+        return estadoFuncion;
     }
 
-    public void setEsatdoFuncion(EsatdoFuncion esatdoFuncion) {
-        this.esatdoFuncion = esatdoFuncion;
+    public void setEstadoFuncion(EstadoFuncion estadoFuncion) {
+        this.estadoFuncion = estadoFuncion;
     }
 
     public List<Asiento> getListFuncionAsientos() {
@@ -116,6 +109,14 @@ public class Funcion {
         this.pelicula = pelicula;
     }
 
+    public Sala getSala() {
+        return sala;
+    }
+
+    public void setSala(Sala sala) {
+        this.sala = sala;
+    }
+
     @Override
     public String toString() {
         return "Funcion{" +
@@ -123,11 +124,12 @@ public class Funcion {
                 ", fecha=" + fecha +
                 ", hora=" + hora +
                 ", valorBase=" + valorBase +
-                ", esatdoFuncion=" + esatdoFuncion +
+                ", estadoFuncion=" + estadoFuncion +
                 ", listFuncionAsientos=" + listFuncionAsientos +
                 ", cine=" + cine +
                 ", listFuncionVentas=" + listFuncionVentas +
                 ", pelicula=" + pelicula +
+                ", sala=" + sala +
                 '}';
     }
 }

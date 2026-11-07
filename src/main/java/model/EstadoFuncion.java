@@ -1,6 +1,6 @@
 package model;
 
-public enum EsatdoFuncion {
+public enum EstadoFuncion {
     PROGRAMADA,
     FINALIZADA,
     CANCELADA
