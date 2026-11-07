@@ -8,9 +8,10 @@ public abstract class Persona {
     private String nombre;
 
     /**
-     * metodo para crear una persona
+     * metodo para crear perosna
+     *
      * @param identificacion de la persona
-     * @param nombre de la persona
+     * @param nombre         de la persona
      */
     public Persona(String identificacion, String nombre) {
         if (identificacion == null || identificacion.trim().isEmpty()) {
@@ -38,6 +39,8 @@ public abstract class Persona {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
+    public abstract String obtenerRol();
 
     @Override
     public String toString() {
