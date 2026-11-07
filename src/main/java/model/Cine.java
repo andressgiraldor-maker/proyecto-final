@@ -1,33 +1,25 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Cine {
 
-    //Atributos de la clase Cine
     private String nombre;
     private String direccion;
 
-    //Relaciones de la clase Cine
     private List<Funcion> listCineFunciones;
     private List<Venta> listCineVentas;
-    private List<Cine> listCinePeliculas;
-    // me sale erro al poner <Sala> private List<Sala> listCineSalas;
+    private List<Pelicula> listCinePeliculas;
+    private List<Sala> listCineSalas;
 
-    /**
-     * constructor de la clase Cine
-     * @param nombre
-     * @param direccion
-     * @param listCineFunciones
-     * @param listCineVentas
-     * @param listCinePeliculas
-     */
-    public Cine(String nombre, String direccion, List<Funcion> listCineFunciones, List<Venta> listCineVentas, List<Cine> listCinePeliculas) {
+    public Cine(String nombre, String direccion, List<Funcion> listCineFunciones, List<Venta> listCineVentas, List<Pelicula> listCinePeliculas, List<Sala> listCineSalas) {
         this.nombre = nombre;
         this.direccion = direccion;
-        this.listCineFunciones = listCineFunciones;
-        this.listCineVentas = listCineVentas;
-        this.listCinePeliculas = listCinePeliculas;
+        this.listCineFunciones = new ArrayList<>();
+        this.listCineVentas = new ArrayList<>();
+        this.listCinePeliculas = new ArrayList<>();
+        this.listCineSalas = new ArrayList<>();
     }
 
     public String getNombre() {
@@ -62,12 +54,20 @@ public class Cine {
         this.listCineVentas = listCineVentas;
     }
 
-    public List<Cine> getListCinePeliculas() {
+    public List<Pelicula> getListCinePeliculas() {
         return listCinePeliculas;
     }
 
-    public void setListCinePeliculas(List<Cine> listCinePeliculas) {
+    public void setListCinePeliculas(List<Pelicula> listCinePeliculas) {
         this.listCinePeliculas = listCinePeliculas;
+    }
+
+    public List<Sala> getListCineSalas() {
+        return listCineSalas;
+    }
+
+    public void setListCineSalas(List<Sala> listCineSalas) {
+        this.listCineSalas = listCineSalas;
     }
 
     @Override
@@ -78,6 +78,7 @@ public class Cine {
                 ", listCineFunciones=" + listCineFunciones +
                 ", listCineVentas=" + listCineVentas +
                 ", listCinePeliculas=" + listCinePeliculas +
+                ", listCineSalas=" + listCineSalas +
                 '}';
     }
 }

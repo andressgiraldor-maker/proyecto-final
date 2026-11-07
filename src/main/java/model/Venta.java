@@ -8,24 +8,18 @@ public class Venta {
     private String codigo;
     private LocalDate fechaHoraVenta;
     private double valorPagado;
-    EstadoVenta estadoVenta;
+    private EstadoVenta estadoVenta;
 
     //Relaciones de la clase Venta
     private Funcion funcion;
     private Cine cine;
     private Asiento asiento;
+    private Cliente cliente;
 
     /**
      * metodo constructor de la clase Venta
-     * @param codigo de la venta
-     * @param fechaHoraVenta de la venta
-     * @param valorPagado de la venta
-     * @param estadoVenta de la venta
-     * @param funcion de la venta
-     * @param cine de la venta
-     * @param asiento de la venta
      */
-    public Venta(String codigo, LocalDate fechaHoraVenta, double valorPagado, EstadoVenta estadoVenta, Funcion funcion, Cine cine, Asiento asiento) {
+    public Venta(String codigo, LocalDate fechaHoraVenta, double valorPagado, EstadoVenta estadoVenta, Funcion funcion, Cine cine, Asiento asiento, Cliente cliente) {
         this.codigo = codigo;
         this.fechaHoraVenta = fechaHoraVenta;
         this.valorPagado = valorPagado;
@@ -33,6 +27,7 @@ public class Venta {
         this.funcion = funcion;
         this.cine = cine;
         this.asiento = asiento;
+        this.cliente = cliente;
     }
 
     public String getCodigo() {
@@ -91,6 +86,14 @@ public class Venta {
         this.asiento = asiento;
     }
 
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
     @Override
     public String toString() {
         return "Venta{" +
@@ -101,6 +104,7 @@ public class Venta {
                 ", funcion=" + funcion +
                 ", cine=" + cine +
                 ", asiento=" + asiento +
+                ", cliente=" + cliente +
                 '}';
     }
 }
