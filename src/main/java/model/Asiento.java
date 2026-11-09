@@ -21,9 +21,8 @@ public class Asiento {
      * @param numero del asiento
      * @param estado del asiento
      * @param funcion del asiento
-     * @param listAsientoVentas del asiento
      */
-    public Asiento(String codigo, char fila, int numero, EstadoAsiento estado, Funcion funcion, List<Venta> listAsientoVentas) {
+    public Asiento(String codigo, char fila, int numero, EstadoAsiento estado, Funcion funcion) {
         this.codigo = codigo;
         this.fila = fila;
         this.numero = numero;

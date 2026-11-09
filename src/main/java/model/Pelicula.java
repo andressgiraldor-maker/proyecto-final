@@ -21,19 +21,11 @@ public class Pelicula implements Deshabilitable {
      * @param codigo de la pelicula
      * @param nombre de la pelicula
      * @param duracionMinutos de la pelciula
-     * @param generoPelicula de la pelicula
-     * @param estadoPelicula de la pelicula
-     * @param clasificacionPelicula de la pelcula
-     * @param cine de la pelicula
-     * @param listPeliculasFunciones de la pelicula
      */
-    public Pelicula(String codigo, String nombre, int duracionMinutos, GeneroPelicula generoPelicula, EstadoPelicula estadoPelicula, ClasificacionPelicula clasificacionPelicula, Cine cine, List<Funcion> listPeliculasFunciones) {
+    public Pelicula(String codigo, String nombre, int duracionMinutos) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.duracionMinutos = duracionMinutos;
-        this.generoPelicula = generoPelicula;
-        this.estadoPelicula = estadoPelicula;
-        this.clasificacionPelicula = clasificacionPelicula;
         this.cine = cine;
         this.listPeliculasFunciones = new ArrayList<>();
     }

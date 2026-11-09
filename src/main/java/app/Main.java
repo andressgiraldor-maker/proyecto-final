@@ -31,7 +31,7 @@ public class Main {
 
             // Crear 5 asientos para esa funcion
             for (int i = 1; i <= 5; i++) {
-                Asiento a = new Asiento("A" + i, 'A', i, EstadoAsiento.DISPONIBLE, funcion, new ArrayList<>());
+                Asiento a = new Asiento("A" + i, 'A', i, EstadoAsiento.DISPONIBLE, funcion);
                 funcion.getListFuncionAsientos().add(a);
             }
             System.out.println("Datos de prueba creados: Cliente 123, Pelicula P001, Sala S001, Funcion F001 con asientos A1-A5");

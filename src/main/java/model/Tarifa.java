@@ -1,9 +1,11 @@
 package model;
 
+import javax.swing.*;
+
 public record Tarifa(double valor) {
     public Tarifa {
         if (valor < 0) {
-            throw new IllegalArgumentException("El valor no puede ser negativo");
+            JOptionPane.showMessageDialog(null, "la tarifa no puede ser nagtiva");
         }
     }
 }
