@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="600.0" prefWidth="780.0" spacing="12.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.viewController.PersonasViewController">
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+   <children>
+      <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Gestion de personas" />
+      <TableView fx:id="tblPersonas" prefHeight="260.0">
+         <columns>
+            <TableColumn fx:id="colIdentificacion" prefWidth="130.0" text="Identificacion" />
+            <TableColumn fx:id="colNombre" prefWidth="190.0" text="Nombre" />
+            <TableColumn fx:id="colRol" prefWidth="120.0" text="Rol" />
+            <TableColumn fx:id="colDetalle" prefWidth="300.0" text="Detalle" />
+         </columns>
+      </TableView>
+      <GridPane hgap="10.0" vgap="10.0">
+         <columnConstraints>
+            <ColumnConstraints minWidth="130.0" />
+            <ColumnConstraints minWidth="200.0" prefWidth="230.0" />
+            <ColumnConstraints minWidth="130.0" />
+            <ColumnConstraints minWidth="200.0" prefWidth="230.0" />
+         </columnConstraints>
+         <children>
+            <Label text="Identificacion" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <TextField fx:id="txtIdentificacion" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <Label text="Nombre" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+            <TextField fx:id="txtNombre" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+            <Label text="Rol" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <ComboBox fx:id="cmbRol" prefWidth="230.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="Gmail (cliente)" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <TextField fx:id="txtGmail" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Label text="Tipo de cliente" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <ComboBox fx:id="cmbTipoCliente" prefWidth="230.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label text="Codigo empleado (operador)" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <TextField fx:id="txtCodigoEmpleado" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <Label text="Codigo administrador" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <TextField fx:id="txtCodigoAdministrador" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+         </children>
+      </GridPane>
+      <HBox spacing="10.0">
+         <children>
+            <Button fx:id="btnRegistrar" mnemonicParsing="false" onAction="#registrarPersona" text="Registrar" />
+            <Button mnemonicParsing="false" onAction="#modificarPersona" text="Modificar" />
+            <Button mnemonicParsing="false" onAction="#eliminarPersona" text="Eliminar" />
+            <Button mnemonicParsing="false" onAction="#deseleccionar" text="Deseleccionar" />
+         </children>
+      </HBox>
+   </children>
+</VBox>

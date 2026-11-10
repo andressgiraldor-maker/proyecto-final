@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="540.0" prefWidth="760.0" spacing="12.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.viewController.SalasViewController">
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+   <children>
+      <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Gestion de salas" />
+      <TableView fx:id="tblSalas" prefHeight="260.0">
+         <columns>
+            <TableColumn fx:id="colCodigo" prefWidth="120.0" text="Codigo" />
+            <TableColumn fx:id="colNombre" prefWidth="280.0" text="Nombre" />
+            <TableColumn fx:id="colCapacidad" prefWidth="140.0" text="Capacidad" />
+            <TableColumn fx:id="colEstado" prefWidth="180.0" text="Estado" />
+         </columns>
+      </TableView>
+      <GridPane hgap="10.0" vgap="10.0">
+         <columnConstraints>
+            <ColumnConstraints minWidth="100.0" />
+            <ColumnConstraints minWidth="200.0" prefWidth="250.0" />
+            <ColumnConstraints minWidth="100.0" />
+            <ColumnConstraints minWidth="200.0" prefWidth="250.0" />
+         </columnConstraints>
+         <children>
+            <Label text="Codigo" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <TextField fx:id="txtCodigo" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <Label text="Nombre" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+            <TextField fx:id="txtNombre" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+            <Label text="Filas (solo al registrar)" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <TextField fx:id="txtFilas" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="Columnas (solo al registrar)" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <TextField fx:id="txtColumnas" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+      <HBox spacing="10.0">
+         <children>
+            <Button fx:id="btnRegistrar" mnemonicParsing="false" onAction="#registrarSala" text="Registrar" />
+            <Button mnemonicParsing="false" onAction="#modificarSala" text="Modificar" />
+            <Button mnemonicParsing="false" onAction="#deshabilitarSala" text="Deshabilitar" />
+            <Button mnemonicParsing="false" onAction="#eliminarSala" text="Eliminar" />
+            <Button mnemonicParsing="false" onAction="#gestionarAsientos" text="Gestionar asientos" />
+            <Button mnemonicParsing="false" onAction="#deseleccionar" text="Deseleccionar" />
+         </children>
+      </HBox>
+   </children>
+</VBox>
