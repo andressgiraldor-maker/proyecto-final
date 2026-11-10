@@ -17,6 +17,11 @@ public class Cine
     private List<Tarifa> tarifas;
     private List<ReporteOcupacion> reportesOcupacion;
 
+    /**
+     * metodo constructor de la clase Cine
+     * @param nombre del cine
+     * @param direccion del cine
+     */
     public Cine(String nombre, String direccion)
     {
         this.nombre = nombre;
@@ -34,6 +39,10 @@ public class Cine
     // Gestion de peliculas
     // ------------------------------------------------------------------
 
+    /**
+     * metodo para registrar una pelicula
+     * @param pelicula pelicula
+     */
     public void registrarPelicula(Pelicula pelicula)
     {
         Pelicula existente = buscarPelicula(pelicula.getCodigo());
@@ -46,6 +55,10 @@ public class Cine
         peliculas.add(pelicula);
     }
 
+    /**
+     * metodo para modifcar una pelicula
+     * @param pelicula pelicula
+     */
     public void modificarPelicula(Pelicula pelicula)
     {
         Pelicula existente = buscarPelicula(pelicula.getCodigo());
@@ -62,6 +75,10 @@ public class Cine
         existente.setEstado(pelicula.getEstado());
     }
 
+    /**
+     * metodo para deshabilitar una pelicula
+     * @param codigo de la pelicula
+     */
     public void deshabilitarPelicula(String codigo)
     {
         Pelicula pelicula = buscarPelicula(codigo);
@@ -74,6 +91,10 @@ public class Cine
         pelicula.deshabilitar();
     }
 
+    /**
+     * metodo para eliminar una pelicula
+     * @param codigo de la pelicula
+     */
     public void eliminarPelicula(String codigo)
     {
         Pelicula pelicula = buscarPelicula(codigo);
@@ -98,6 +119,10 @@ public class Cine
     // Gestion de salas
     // ------------------------------------------------------------------
 
+    /**
+     * metodo para registrar una sala
+     * @param sala sala
+     */
     public void registrarSala(Sala sala)
     {
         Sala existente = buscarSala(sala.getCodigo());
@@ -110,6 +135,10 @@ public class Cine
         salas.add(sala);
     }
 
+    /**
+     * metodo para modifcar una sala
+     * @param sala sala
+     */
     public void modificarSala(Sala sala)
     {
         Sala existente = buscarSala(sala.getCodigo());
@@ -123,6 +152,10 @@ public class Cine
         existente.setEstado(sala.getEstado());
     }
 
+    /**
+     * metodo para deshabilitar una sala
+     * @param codigo de la sala
+     */
     public void deshabilitarSala(String codigo)
     {
         Sala sala = buscarSala(codigo);
@@ -135,6 +168,10 @@ public class Cine
         sala.deshabilitar();
     }
 
+    /**
+     * metodo para eliminar una sala
+     * @param codigo de la sala
+     */
     public void eliminarSala(String codigo)
     {
         Sala sala = buscarSala(codigo);
@@ -152,6 +189,11 @@ public class Cine
         salas.remove(sala);
     }
 
+    /**
+     * metodo para consultar asientos por sala
+     * @param codigoSala de la sala
+     * @return
+     */
     public List<Asiento> consultarAsientosDeSala(String codigoSala)
     {
         Sala sala = buscarSala(codigoSala);
@@ -165,18 +207,38 @@ public class Cine
         return resultado;
     }
 
+    /**
+     * metodo para agregar un asiento
+     * @param codigoSala del asiento
+     * @param fila del asiento
+     * @param numero del asiento
+     */
     public void agregarAsiento(String codigoSala, char fila, int numero)
     {
         Sala sala = obtenerSalaEditable(codigoSala);
         sala.agregarAsiento(fila, numero);
     }
 
+    /**
+     * metodo para modificar un asiento
+     * @param codigoSala del asiento
+     * @param filaActual del asiento
+     * @param numeroActual del asiento
+     * @param filaNueva del asiento
+     * @param numeroNuevo del asiento
+     */
     public void modificarAsiento(String codigoSala, char filaActual, int numeroActual, char filaNueva, int numeroNuevo)
     {
         Sala sala = obtenerSalaEditable(codigoSala);
         sala.modificarAsiento(filaActual, numeroActual, filaNueva, numeroNuevo);
     }
 
+    /**
+     * metodo para eliminar un sala
+     * @param codigoSala de la sala
+     * @param fila de la sala
+     * @param numero de la sala
+     */
     public void eliminarAsiento(String codigoSala, char fila, int numero)
     {
         Sala sala = obtenerSalaEditable(codigoSala);
@@ -204,6 +266,11 @@ public class Cine
         return sala;
     }
 
+    /**
+     * metodo para saber si sala tiene funciones
+     * @param codigoSala de la sala
+     * @return
+     */
     private boolean salaTieneFunciones(String codigoSala)
     {
         boolean tiene = false;
@@ -223,6 +290,10 @@ public class Cine
     // Gestion de personas
     // ------------------------------------------------------------------
 
+    /**
+     * metodo para regitrar cliente
+     * @param cliente cliente
+     */
     public void registrarCliente(Cliente cliente)
     {
         Persona existente = buscarPersona(cliente.getIdentificacion());
@@ -235,6 +306,10 @@ public class Cine
         personas.add(cliente);
     }
 
+    /**
+     * metodo para regitrar un operador
+     * @param operador operador
+     */
     public void registrarOperador(Operador operador)
     {
         Persona existente = buscarPersona(operador.getIdentificacion());
@@ -247,6 +322,10 @@ public class Cine
         personas.add(operador);
     }
 
+    /**
+     * metodo para regitrar un admin
+     * @param administrador admin
+     */
     public void registrarAdministrador(Administrador administrador)
     {
         Persona existente = buscarPersona(administrador.getIdentificacion());
@@ -259,6 +338,10 @@ public class Cine
         personas.add(administrador);
     }
 
+    /**
+     * metodo para modificar un cliente
+     * @param cliente del cliente
+     */
     public void modificarCliente(Cliente cliente)
     {
         Cliente existente = buscarCliente(cliente.getIdentificacion());
@@ -273,6 +356,10 @@ public class Cine
         existente.setTipoCliente(cliente.getTipoCliente());
     }
 
+    /**
+     * metodo para modificar un operador
+     * @param operador del operador
+     */
     public void modificarOperador(Operador operador)
     {
         Operador existente = buscarOperador(operador.getIdentificacion());
@@ -286,6 +373,10 @@ public class Cine
         existente.setCodigoEmpleado(operador.getCodigoEmpleado());
     }
 
+    /**
+     * metodo para modificar una dmin
+     * @param administrador del admin
+     */
     public void modificarAdministrador(Administrador administrador)
     {
         Administrador existente = buscarAdministrador(administrador.getIdentificacion());
@@ -299,6 +390,10 @@ public class Cine
         existente.setCodigoAdministrador(administrador.getCodigoAdministrador());
     }
 
+    /**
+     * metodo para elimar una persona
+     * @param identificacion de la persona
+     */
     public void eliminarPersona(String identificacion)
     {
         Persona persona = buscarPersona(identificacion);
@@ -326,6 +421,10 @@ public class Cine
     // Gestion de tarifas
     // ------------------------------------------------------------------
 
+    /**
+     * metodo para registrar una tarifa
+     * @param tarifa tarifa
+     */
     public void registrarTarifa(Tarifa tarifa)
     {
         Tarifa existente = buscarTarifa(tarifa.tipo());
@@ -338,6 +437,10 @@ public class Cine
         tarifas.add(tarifa);
     }
 
+    /**
+     * metodo para modificar una tarifa
+     * @param tarifa tafira
+     */
     public void modificarTarifa(Tarifa tarifa)
     {
         Tarifa existente = buscarTarifa(tarifa.tipo());
@@ -355,6 +458,10 @@ public class Cine
     // Gestion de funciones
     // ------------------------------------------------------------------
 
+    /**
+     * metodo para programar una funcion
+     * @param funcion funcion
+     */
     public void programarFuncion(Funcion funcion)
     {
         Funcion existente = buscarFuncion(funcion.getCodigo());
@@ -376,6 +483,16 @@ public class Cine
     // Ventas
     // ------------------------------------------------------------------
 
+    /**
+     * metodo para vender una entrada
+     * @param codigo de la entrada
+     * @param cliente de la entrada
+     * @param funcion de la entrada
+     * @param tipo de la entrada
+     * @param fila de la entrada
+     * @param numero de la entrada
+     * @return
+     */
     public Venta venderEntrada(String codigo, Cliente cliente, Funcion funcion, TipoEntrada tipo, char fila, int numero)
     {
         Venta ventaExistente = buscarVenta(codigo);
@@ -433,6 +550,10 @@ public class Cine
         return venta;
     }
 
+    /**
+     * metodo para cancelar una vente
+     * @param codigoVenta de la venta
+     */
     public void cancelarVenta(String codigoVenta)
     {
         Venta venta = buscarVenta(codigoVenta);
@@ -445,6 +566,12 @@ public class Cine
         venta.cancelar();
     }
 
+    /**
+     * metodo para calcular valor de entrada
+     * @param funcion de entrada
+     * @param tipo de entrada
+     * @return
+     */
     public double calcularValorEntrada(Funcion funcion, TipoEntrada tipo)
     {
         Tarifa tarifa = buscarTarifa(tipo);
@@ -463,6 +590,10 @@ public class Cine
     // Consultas
     // ------------------------------------------------------------------
 
+    /**
+     * metodo para consultar peliculas disponibles
+     * @return
+     */
     public List<Pelicula> consultarPeliculasDisponibles()
     {
         List<Pelicula> disponibles = new ArrayList<>();
@@ -478,6 +609,10 @@ public class Cine
         return disponibles;
     }
 
+    /**
+     * metodo para consultar funciones
+     * @return
+     */
     public List<Funcion> consultarFunciones()
     {
         List<Funcion> resultado = new ArrayList<>();
@@ -493,6 +628,11 @@ public class Cine
         return resultado;
     }
 
+    /**
+     * metodo para consultar funciones por fecha
+     * @param fecha de la funcion
+     * @return
+     */
     public List<Funcion> consultarFuncionesPorFecha(LocalDate fecha)
     {
         List<Funcion> resultado = new ArrayList<>();
@@ -508,6 +648,11 @@ public class Cine
         return resultado;
     }
 
+    /**
+     * metodo para consultar asientos disponibles
+     * @param codigoFuncion de la funcion
+     * @return
+     */
     public List<Asiento> consultarAsientosDisponibles(String codigoFuncion)
     {
         Funcion funcion = buscarFuncion(codigoFuncion);
@@ -534,6 +679,10 @@ public class Cine
     // Reportes
     // ------------------------------------------------------------------
 
+    /**
+     * metodo para contar entradas vendidas
+     * @return
+     */
     public int contarEntradasVendidas()
     {
         int contador = 0;
@@ -549,6 +698,10 @@ public class Cine
         return contador;
     }
 
+    /**
+     * metodo para calcular ingresos totales
+     * @return
+     */
     public double calcularTotalIngresos()
     {
         double total = 0;
@@ -564,6 +717,10 @@ public class Cine
         return total;
     }
 
+    /**
+     * metodo para obtener las peliculas mas vendidas
+     * @return
+     */
     public Pelicula obtenerPeliculaMasVendida()
     {
         Pelicula masVendida = null;
@@ -592,6 +749,11 @@ public class Cine
         return masVendida;
     }
 
+    /**
+     * metodo para generar un reporte de ocupacion
+     * @param codigoFuncion de la funcion
+     * @return
+     */
     public ReporteOcupacion generarReporteOcupacion(String codigoFuncion)
     {
         Funcion funcion = buscarFuncion(codigoFuncion);
@@ -615,6 +777,11 @@ public class Cine
     // Busquedas
     // ------------------------------------------------------------------
 
+    /**
+     * metodo para buscar una persona
+     * @param identificacion de la persona
+     * @return
+     */
     public Persona buscarPersona(String identificacion)
     {
         Persona encontrada = null;
@@ -630,6 +797,11 @@ public class Cine
         return encontrada;
     }
 
+    /**
+     * metodo para buscar un cliente
+     * @param identificacion del cliente
+     * @return
+     */
     public Cliente buscarCliente(String identificacion)
     {
         Cliente encontrado = null;
@@ -645,6 +817,11 @@ public class Cine
         return encontrado;
     }
 
+    /**
+     * metodo para buscar un operador
+     * @param identificacion del operador
+     * @return
+     */
     public Operador buscarOperador(String identificacion)
     {
         Operador encontrado = null;
@@ -660,6 +837,11 @@ public class Cine
         return encontrado;
     }
 
+    /**
+     * metodo para buscar un admin
+     * @param identificacion del admin
+     * @return
+     */
     public Administrador buscarAdministrador(String identificacion)
     {
         Administrador encontrado = null;
@@ -675,6 +857,11 @@ public class Cine
         return encontrado;
     }
 
+    /**
+     * metodo para buscar un pelicula
+     * @param codigo de la pelicula
+     * @return
+     */
     public Pelicula buscarPelicula(String codigo)
     {
         Pelicula encontrada = null;
@@ -690,6 +877,11 @@ public class Cine
         return encontrada;
     }
 
+    /**
+     * metodo para buscar una sala
+     * @param codigo de la sala
+     * @return
+     */
     public Sala buscarSala(String codigo)
     {
         Sala encontrada = null;
@@ -705,6 +897,11 @@ public class Cine
         return encontrada;
     }
 
+    /**
+     * metodo para buscar una funcion
+     * @param codigo de la funcion
+     * @return
+     */
     public Funcion buscarFuncion(String codigo)
     {
         Funcion encontrada = null;
@@ -720,6 +917,11 @@ public class Cine
         return encontrada;
     }
 
+    /**
+     * metodo para buscar una venta
+     * @param codigo de la venta
+     * @return
+     */
     public Venta buscarVenta(String codigo)
     {
         Venta encontrada = null;
