@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1897d635-130f-41be-846c-a44918178132" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Asiento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Asiento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Funcion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Funcion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Pelicula.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Pelicula.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Tarifa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Tarifa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-    </list>
+    <list default="true" id="1897d635-130f-41be-846c-a44918178132" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
