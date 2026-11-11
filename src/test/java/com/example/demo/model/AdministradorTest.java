@@ -1,5 +1,5 @@
 /**
- * Clase para probar el registro de los jugadores
+ * Clase para probar los metodos de adminitrador
  * @author Área de programación UQ
  * @since 2023-08
  *

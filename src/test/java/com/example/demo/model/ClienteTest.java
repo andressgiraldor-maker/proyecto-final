@@ -1,3 +1,10 @@
+/**
+ * Clase para probar los metodos de cliente
+ * @author Área de programación UQ
+ * @since 2023-08
+ *
+ * Licencia GNU/GPL V3.0 (https://raw.githubusercontent.com/grid-uq/poo/main/LICENSE)
+ */
 package com.example.demo.model;
 
 import org.junit.jupiter.api.Test;
