@@ -44,6 +44,12 @@ public class Funcion
         }
     }
 
+    /**
+     * metodo para buscar asientos
+     * @param fila del asiento
+     * @param numero del asiento
+     * @return
+     */
     public Asiento buscarAsiento(char fila, int numero)
     {
         Asiento encontrado = null;
@@ -59,6 +65,10 @@ public class Funcion
         return encontrado;
     }
 
+    /**
+     * metodo para contar asientos disponibles
+     * @return
+     */
     public int contarAsientosDisponibles()
     {
         int contador = 0;
@@ -74,6 +84,10 @@ public class Funcion
         return contador;
     }
 
+    /**
+     * metodo para contar asientos ocupados
+     * @return
+     */
     public int contarAsientosOcupados()
     {
         int contador = 0;
@@ -89,6 +103,10 @@ public class Funcion
         return contador;
     }
 
+    /**
+     * metodo para calcular porcentaje por ocupacion
+     * @return
+     */
     public double calcularPorcentajeOcupacion()
     {
         double porcentaje = 0;
@@ -113,6 +131,10 @@ public class Funcion
         return valor;
     }
 
+    /**
+     * metodo para saber si una fucnion esta programada
+     * @return
+     */
     public boolean estaProgramada()
     {
         boolean programada;

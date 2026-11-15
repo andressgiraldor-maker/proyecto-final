@@ -15,6 +15,15 @@ public class Venta
     private Asiento asiento;
     private Tarifa tarifa;
 
+    /**
+     * metodo constructor de la classe Venta
+     * @param codigo de la venta
+     * @param cliente de la venta
+     * @param funcion de la vente
+     * @param asiento de la evnta
+     * @param tarifa de la venta
+     * @param valorPagado de la venta
+     */
     public Venta(String codigo, Cliente cliente, Funcion funcion, Asiento asiento, Tarifa tarifa, double valorPagado)
     {
         this.codigo = codigo;
@@ -27,6 +36,10 @@ public class Venta
         this.estado = EstadoVenta.ACTIVA;
     }
 
+    /**
+     * metodo para saber si una venta esta activa
+     * @return
+     */
     public boolean estaActiva()
     {
         boolean activa;
@@ -47,6 +60,10 @@ public class Venta
         asiento.liberar();
     }
 
+    /**
+     * metodo para generar una entrada
+     * @return
+     */
     public Entrada generarEntrada()
     {
         String nombrePelicula = funcion.getPelicula().getNombre();

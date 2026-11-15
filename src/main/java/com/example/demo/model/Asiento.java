@@ -8,6 +8,11 @@ public class Asiento
     private int numero;
     private EstadoAsiento estado;
 
+    /**
+     * metodo constructor de la clase Asiento
+     * @param fila del asiento
+     * @param numero del asiento
+     */
     public Asiento(char fila, int numero)
     {
         String codigoGenerado;
@@ -19,6 +24,10 @@ public class Asiento
         this.estado = EstadoAsiento.DISPONIBLE;
     }
 
+    /**
+     * metodo para saber si una siento esta disponible
+     * @return
+     */
     public boolean estaDisponible()
     {
         boolean disponible;
@@ -26,6 +35,9 @@ public class Asiento
         return disponible;
     }
 
+    /**
+     * metodo para ocupar un asiento
+     */
     public void ocupar()
     {
         if (estado == EstadoAsiento.OCUPADO)
@@ -35,6 +47,9 @@ public class Asiento
         estado = EstadoAsiento.OCUPADO;
     }
 
+    /**
+     * metodo para liberar un asiento
+     */
     public void liberar()
     {
         estado = EstadoAsiento.DISPONIBLE;

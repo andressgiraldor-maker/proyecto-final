@@ -10,6 +10,14 @@ public class Pelicula implements Deshabilitable
     private Clasificacion clasificacion;
     private EstadoPelicula estado;
 
+    /**
+     * metodo constructor de la clase Pelicula
+     * @param codigo de la pelicula
+     * @param nombre de la pelicula
+     * @param genero de la pelicula
+     * @param duracionMinutos de la pelicula
+     * @param clasificacion de la pelicula
+     */
     public Pelicula(String codigo, String nombre, Genero genero, int duracionMinutos, Clasificacion clasificacion)
     {
         this.codigo = codigo;
@@ -20,6 +28,10 @@ public class Pelicula implements Deshabilitable
         this.estado = EstadoPelicula.DISPONIBLE;
     }
 
+    /**
+     * metodo para saber si una pelciual esta disponible
+     * @return
+     */
     @Override
     public boolean estaDisponible()
     {
@@ -28,6 +40,9 @@ public class Pelicula implements Deshabilitable
         return disponible;
     }
 
+    /**
+     * metodo para deshabilitar una pelicula
+     */
     @Override
     public void deshabilitar()
     {

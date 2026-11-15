@@ -12,6 +12,11 @@ public class Sala implements Deshabilitable
     private EstadoSala estado;
     private List<Asiento> asientos;
 
+    /**
+     * metodo constructor de la clase Sala
+     * @param codigo de la sala
+     * @param nombre de la sala
+     */
     public Sala(String codigo, String nombre)
     {
         this.codigo = codigo;
@@ -21,6 +26,10 @@ public class Sala implements Deshabilitable
         this.asientos = new ArrayList<>();
     }
 
+    /**
+     * metodo para saber si una sala esta disponible
+     * @return
+     */
     @Override
     public boolean estaDisponible()
     {
@@ -29,6 +38,9 @@ public class Sala implements Deshabilitable
         return disponible;
     }
 
+    /**
+     * metodo para deshbailitar una sala
+     */
     @Override
     public void deshabilitar()
     {
@@ -60,6 +72,12 @@ public class Sala implements Deshabilitable
         actualizarCapacidad();
     }
 
+    /**
+     * metodo para buscar un asiento
+     * @param fila del asiento
+     * @param numero del asiento
+     * @return
+     */
     public Asiento buscarAsiento(char fila, int numero)
     {
         Asiento encontrado = null;
@@ -75,6 +93,11 @@ public class Sala implements Deshabilitable
         return encontrado;
     }
 
+    /**
+     * metodo para agregar siento
+     * @param fila del asiento
+     * @param numero del asiento
+     */
     public void agregarAsiento(char fila, int numero)
     {
         validarPosicion(fila, numero);
@@ -114,6 +137,11 @@ public class Sala implements Deshabilitable
         asientos.set(posicion, nuevo);
     }
 
+    /**
+     * metodo para eliminar un asiento
+     * @param fila del asiento
+     * @param numero del asiento
+     */
     public void eliminarAsiento(char fila, int numero)
     {
         Asiento asiento = buscarAsiento(fila, numero);
@@ -127,6 +155,11 @@ public class Sala implements Deshabilitable
         actualizarCapacidad();
     }
 
+    /**
+     * metodo para validar la posicion de una asiento
+     * @param fila del asiento
+     * @param numero del asiento
+     */
     private void validarPosicion(char fila, int numero)
     {
         if (fila < 'A' || fila > 'Z' || numero <= 0)
@@ -135,6 +168,9 @@ public class Sala implements Deshabilitable
         }
     }
 
+    /**
+     * metodo para actualizar la capacidad de los asientos
+     */
     private void actualizarCapacidad()
     {
         capacidad = asientos.size();

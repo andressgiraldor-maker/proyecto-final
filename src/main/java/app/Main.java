@@ -20,14 +20,19 @@ public class Main {
             Cliente cliente = new Cliente("123", "Juan Perez", "juan@gmail.com");
             servicio.crearCliente(cliente);
 
-            Pelicula peli = new Pelicula("P001", "Avatar", 180, GeneroPelicula.CIENCIA_FICCION, EstadoPelicula.DISPONIBLE, ClasificacionPelicula.MAYORES_12, cine, new ArrayList<>());
-            servicio.crearPelicula(peli);
+            Pelicula peli = new Pelicula("P001", "Avatar", 180);
+            peli.setGeneroPelicula(GeneroPelicula.CIENCIA_FICCION);
+            peli.setEstadoPelicula(EstadoPelicula.DISPONIBLE);
+            peli.setClasificacionPelicula(ClasificacionPelicula.MAYORES_12);
+            peli.setCine(cine);
 
             Sala sala = new Sala("S001", "Sala 1", 20, EstadoSala.DISPONIBLE, new ArrayList<>(), new ArrayList<>(), cine);
             servicio.crearSala(sala);
 
-            Funcion funcion = new Funcion("F001", LocalDate.now(), LocalTime.of(19, 0), 15000, EstadoFuncion.PROGRAMADA, new ArrayList<>(), cine, new ArrayList<>(), peli, sala);
-            servicio.crearFuncion(funcion);
+            Funcion funcion = new Funcion("F001", LocalDate.now(), LocalTime.of(19, 0), 15000, EstadoFuncion.PROGRAMADA);
+            funcion.setCine(cine);
+            funcion.setPelicula(peli);
+            funcion.setSala(sala);
 
             // Crear 5 asientos para esa funcion
             for (int i = 1; i <= 5; i++) {
