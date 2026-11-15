@@ -13,6 +13,7 @@ import com.example.demo.model.Persona;
 import com.example.demo.model.Sala;
 import com.example.demo.model.Tarifa;
 import com.example.demo.model.TipoEntrada;
+import com.example.demo.model.Venta;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -187,5 +188,111 @@ public class ModelFactoryController
     {
         List<Funcion> funciones = cine.consultarFunciones();
         return funciones;
+    }
+
+    // ===== FUNCIONES =====
+    public void programarFuncion(Funcion funcion) {
+        cine.programarFuncion(funcion);
+    }
+
+    public Funcion buscarFuncion(String codigo) {
+        return cine.buscarFuncion(codigo);
+    }
+
+    public List<Funcion> consultarFuncionesPorFecha(LocalDate fecha) {
+        return cine.consultarFuncionesPorFecha(fecha);
+    }
+
+    public List<Asiento> consultarAsientosDisponibles(String codigoFuncion) throws Exception {
+        return cine.consultarAsientosDisponibles(codigoFuncion);
+    }
+
+    // ===== VENTAS - OPERADOR =====
+    public Venta venderEntrada(String codVenta, String codFuncion, String codAsiento, String idCliente, TipoEntrada tipo) throws Exception {
+        Funcion funcion = cine.buscarFuncion(codFuncion);
+        if (funcion == null) throw new Exception("La funcion no existe: " + codFuncion);
+
+        Cliente cliente = cine.buscarCliente(idCliente);
+        if (cliente == null) throw new Exception("Cliente no existe: " + idCliente);
+
+        if (codAsiento == null || codAsiento.length() < 2)
+            throw new Exception("Codigo asiento invalido: " + codAsiento);
+        char fila = Character.toUpperCase(codAsiento.charAt(0));
+        int numero = Integer.parseInt(codAsiento.substring(1));
+
+        return cine.venderEntrada(codVenta, cliente, funcion, tipo, fila, numero);
+    }
+
+    public void cancelarVenta(String codigoVenta) throws Exception {
+        cine.cancelarVenta(codigoVenta);
+    }
+
+    public List<Venta> consultarVentas() {
+        return cine.getVentas();
+    }
+
+    // ===== TARIFAS =====
+    public void registrarTarifa(Tarifa tarifa) {
+        cine.registrarTarifa(tarifa);
+    }
+
+    public void modificarTarifa(Tarifa tarifa) {
+        cine.modificarTarifa(tarifa);
+    }
+
+    public List<Tarifa> consultarTarifas() {
+        return cine.getTarifas();
+    }
+
+    public Tarifa buscarTarifa(TipoEntrada tipo) {
+        return cine.buscarTarifa(tipo);
+    }
+
+    // ===== REPORTES =====
+    public int contarEntradasVendidas() {
+        return cine.contarEntradasVendidas();
+    }
+
+    public double calcularTotalIngresos() {
+        return cine.calcularTotalIngresos();
+    }
+
+    public Pelicula obtenerPeliculaMasVendida() {
+        return cine.obtenerPeliculaMasVendida();
+    }
+
+    public String obtenerPeliculaMasVendidaNombre() {
+        Pelicula p = cine.obtenerPeliculaMasVendida();
+        return p == null ? "Sin ventas" : p.getNombre();
+    }
+
+    public String consultarDisponibilidadFuncion(String codigoFuncion) throws Exception {
+        Funcion f = cine.buscarFuncion(codigoFuncion);
+        if (f == null) throw new Exception("Funcion no existe");
+        return "Funcion: " + f.getPelicula().getNombre() + "\n"
+                + "Sala: " + f.getSala().getNombre() + " | Hora: " + f.getHora() + "\n"
+                + "Disponibles: " + f.contarAsientosDisponibles()
+                + " | Ocupados: " + f.contarAsientosOcupados();
+    }
+
+    public String consultarOcupacionFuncion(String codigoFuncion) throws Exception {
+        Funcion f = cine.buscarFuncion(codigoFuncion);
+        if (f == null) throw new Exception("Funcion no existe: " + codigoFuncion);
+        return "Disponibles: " + f.contarAsientosDisponibles()
+                + " | Ocupados: " + f.contarAsientosOcupados()
+                + " | Ocupacion: " + String.format("%.1f%%", f.calcularPorcentajeOcupacion());
+    }
+
+    // ===== BUSQUEDAS PARA LA GUI =====
+    public Cliente buscarCliente(String identificacion) {
+        return cine.buscarCliente(identificacion);
+    }
+
+    public Pelicula buscarPelicula(String codigo) {
+        return cine.buscarPelicula(codigo);
+    }
+
+    public Sala buscarSala(String codigo) {
+        return cine.buscarSala(codigo);
     }
 }

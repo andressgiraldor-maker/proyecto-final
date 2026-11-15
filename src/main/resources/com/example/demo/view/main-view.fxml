@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="480.0" prefWidth="640.0" spacing="10.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.viewController.MainViewController">
+<VBox prefHeight="560.0" prefWidth="640.0" spacing="10.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.viewController.MainViewController">
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
    </padding>
@@ -20,9 +20,20 @@
             <Button mnemonicParsing="false" onAction="#abrirGestionPersonas" text="Gestionar personas" />
          </children>
       </HBox>
+      <HBox spacing="10.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#onVenderEntrada" text="Vender entrada" />
+            <Button mnemonicParsing="false" onAction="#onCancelarVenta" text="Cancelar venta" />
+            <Button mnemonicParsing="false" onAction="#onProgramarFuncion" text="Programar funcion" />
+            <Button mnemonicParsing="false" onAction="#onGestionarTarifas" text="Gestionar tarifas" />
+            <Button mnemonicParsing="false" onAction="#onVerReportes" text="Ver reportes" />
+         </children>
+      </HBox>
       <Label text="Peliculas disponibles" />
       <ListView fx:id="lstPeliculas" prefHeight="150.0" />
       <Label text="Funciones programadas" />
-      <ListView fx:id="lstFunciones" prefHeight="200.0" />
+      <ListView fx:id="lstFunciones" prefHeight="180.0" />
+      <Label text="Reportes" style="-fx-font-weight: bold; -fx-font-size: 14;" />
+      <Label fx:id="lblReportes" text="Ventas: 0 | Ingresos: $0 | Mas vendida: -" />
    </children>
 </VBox>

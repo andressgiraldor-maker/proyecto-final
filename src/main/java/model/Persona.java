@@ -8,7 +8,7 @@ public abstract class Persona {
     private String nombre;
 
     /**
-     * metodo para crear perosna
+     * metodo para crear persona
      *
      * @param identificacion de la persona
      * @param nombre         de la persona
@@ -29,6 +29,9 @@ public abstract class Persona {
     }
 
     public void setIdentificacion(String identificacion) {
+        if (identificacion == null || identificacion.trim().isEmpty()) {
+            throw new IllegalArgumentException("La identificacion no puede estar vacia");
+        }
         this.identificacion = identificacion;
     }
 
@@ -37,10 +40,26 @@ public abstract class Persona {
     }
 
     public void setNombre(String nombre) {
+        if (nombre == null || nombre.trim().isEmpty()) {
+            throw new IllegalArgumentException("El nombre no puede estar vacio");
+        }
         this.nombre = nombre;
     }
 
     public abstract String obtenerRol();
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Persona)) return false;
+        Persona persona = (Persona) o;
+        return Objects.equals(identificacion, persona.identificacion);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(identificacion);
+    }
 
     @Override
     public String toString() {

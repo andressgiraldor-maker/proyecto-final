@@ -16,31 +16,81 @@ public class Funcion {
 
     //Relaciones de la clase Funcion
     private List<Asiento> listFuncionAsientos;
-    private Cine cine;
     private List<Venta> listFuncionVentas;
     private Pelicula pelicula;
     private Sala sala;
 
     /**
-     * metodo constructor de la clase Funcion
-     * @param codigo de la funcion
-     * @param fecha de la funcion
-     * @param hora de la funcion
-     * @param valorBase de la funcion
-     * @param estadoFuncion
+     * UNICO constructor de la clase Funcion
      */
-    public Funcion(String codigo, LocalDate fecha, LocalTime hora, double valorBase, EstadoFuncion estadoFuncion) {
+    public Funcion(String codigo, LocalDate fecha, LocalTime hora, double valorBase, EstadoFuncion estadoFuncion, Pelicula pelicula, Sala sala) {
         this.codigo = codigo;
         this.fecha = fecha;
         this.hora = hora;
         this.valorBase = valorBase;
         this.estadoFuncion = estadoFuncion;
-        this.listFuncionAsientos = new ArrayList<>();
-        this.cine = cine;
-        this.listFuncionVentas = new ArrayList<>();
         this.pelicula = pelicula;
         this.sala = sala;
+        this.listFuncionAsientos = new ArrayList<>();
+        this.listFuncionVentas = new ArrayList<>();
+
+        // Copia los asientos de la sala para esta funcion
+        // Se copian, no se usan los mismos, para que ocupar en una funcion no afecte a otra
+        if (sala != null) {
+            for (Asiento a : sala.getListSalaAsientos()) {
+                listFuncionAsientos.add(new Asiento(a.getCodigo(), a.getFila(), a.getNumero(), EstadoAsiento.DISPONIBLE));
+            }
+        }
     }
+
+    // ===== METODOS DEL DIAGRAMA =====
+
+    public boolean estaProgramada() {
+        return estadoFuncion == EstadoFuncion.PROGRAMADA;
+    }
+
+    // Alias para que Cine viejo no falle, es lo mismo que estaProgramada()
+    public boolean estaDisponible() {
+        return estaProgramada();
+    }
+
+    public Asiento buscarAsiento(char fila, int numero) {
+        for (Asiento a : listFuncionAsientos) {
+            if (a.getFila() == fila && a.getNumero() == numero) {
+                return a;
+            }
+        }
+        return null;
+    }
+
+    public int contarAsientosDisponibles() {
+        int total = 0;
+        for (Asiento a : listFuncionAsientos) {
+            if (a.estaDisponible()) total++;
+        }
+        return total;
+    }
+
+    public int contarAsientosOcupados() {
+        return listFuncionAsientos.size() - contarAsientosDisponibles();
+    }
+
+    public double calcularPorcentajeOcupacion() {
+        if (listFuncionAsientos.isEmpty()) return 0;
+        return (contarAsientosOcupados() * 100.0) / listFuncionAsientos.size();
+    }
+
+    public List<Asiento> getAsientosDisponibles() {
+        List<Asiento> disponibles = new ArrayList<>();
+        for (Asiento a : listFuncionAsientos) {
+            if (a.estaDisponible()) {
+                disponibles.add(a);
+            }
+        }
+        return disponibles;
+    }
+
+    // ===== Getters y Setters =====
 
     public String getCodigo() {
         return codigo;
@@ -90,14 +140,6 @@ public class Funcion {
         this.listFuncionAsientos = listFuncionAsientos;
     }
 
-    public Cine getCine() {
-        return cine;
-    }
-
-    public void setCine(Cine cine) {
-        this.cine = cine;
-    }
-
     public List<Venta> getListFuncionVentas() {
         return listFuncionVentas;
     }
@@ -130,11 +172,9 @@ public class Funcion {
                 ", hora=" + hora +
                 ", valorBase=" + valorBase +
                 ", estadoFuncion=" + estadoFuncion +
-                ", listFuncionAsientos=" + listFuncionAsientos +
-                ", cine=" + cine +
-                ", listFuncionVentas=" + listFuncionVentas +
-                ", pelicula=" + pelicula +
-                ", sala=" + sala +
+                ", pelicula=" + (pelicula != null ? pelicula.getNombre() : "sin pelicula") +
+                ", sala=" + (sala != null ? sala.getCodigo() : "sin sala") +
+                ", asientos=" + listFuncionAsientos.size() +
                 '}';
     }
 }

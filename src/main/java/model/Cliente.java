@@ -1,38 +1,20 @@
 package model;
 
 public class Cliente extends Persona {
-
     private String gmail;
+    private TipoCliente tipoCliente;
 
-    /**
-     * metodo para crear un cliente
-     *
-     * @param identificacion del cliente
-     * @param nombre         del cliente
-     * @param gmail          del cliente
-     */
-    public Cliente(String identificacion, String nombre, String gmail) {
+    public Cliente(String identificacion, String nombre, String gmail, TipoCliente tipoCliente) {
         super(identificacion, nombre);
-        if (gmail == null || gmail.trim().isEmpty()) {
-            throw new IllegalArgumentException("El codigo del cliente no puede estar vacio");
-        }
         this.gmail = gmail;
-    }
-    public String getGmail() {
-        return gmail;
-    }
-    public void setGmail(String gmail) {
-        this.gmail = gmail;
+        this.tipoCliente = tipoCliente;
     }
 
     @Override
-    public String toString() {
-        return "Cliente{" +
-                "gmail='" + gmail + '\'' +
-                '}';
-    }
-    @Override
-    public String obtenerRol() {
-        return "Cliente";
-    }
+    public String obtenerRol() { return "CLIENTE"; }
+
+    public String getGmail() { return gmail; }
+    public void setGmail(String gmail) { this.gmail = gmail; }
+    public TipoCliente getTipoCliente() { return tipoCliente; }
+    public void setTipoCliente(TipoCliente tipoCliente) { this.tipoCliente = tipoCliente; }
 }

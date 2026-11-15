@@ -5,10 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1897d635-130f-41be-846c-a44918178132" name="Changes" comment="Merge remote-tracking branch 'origin/dev_yeffersonlrodrigueza' into dev_sebastian-arcila&#10;&#10;# Conflicts:&#10;#&#9;.idea/misc.xml&#10;#&#9;.idea/vcs.xml&#10;#&#9;pom.xml&#10;#&#9;src/main/java/module-info.java">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/ReporteOcupacion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/ModelFactoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/ModelFactoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/viewController/AsientosViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/viewController/AsientosViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/viewController/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/viewController/MainViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Asiento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Asiento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Cine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Cine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Deshabilitable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Deshabilitable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/EstadoVenta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/EstadoVenta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Funcion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Funcion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Operador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Operador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Pelicula.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Pelicula.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Persona.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Persona.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Sala.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Sala.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Tarifa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Tarifa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/TipoEntrada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/TipoEntrada.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Venta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Venta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/CinemaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/CinemaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo/view/main-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo/view/main-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +39,7 @@
         <option value="Interface" />
         <option value="Class" />
         <option value="Enum" />
+        <option value="Record" />
       </list>
     </option>
   </component>
@@ -53,23 +72,23 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0060872232785976" />
-      <entry key="MS500" value="1.3604822178650562" />
-      <entry key="S2" value="1.7748559309591716" />
-      <entry key="S5" value="1.9030013189107784" />
-      <entry key="S10" value="1.950263815427473" />
-      <entry key="S30" value="1.9831385616539092" />
-      <entry key="S60" value="1.9915334395036353" />
-      <entry key="M2" value="1.9957577212874802" />
-      <entry key="M5" value="1.998300923983765" />
-      <entry key="M10" value="1.9991501008275807" />
-      <entry key="M15" value="1.9994333202626553" />
-      <entry key="M30" value="1.9997166199792096" />
-      <entry key="H1" value="1.9998582999501529" />
-      <entry key="H2" value="1.9999291474650356" />
-      <entry key="H4" value="1.9999645731049853" />
-      <entry key="D1" value="1.9999940954303383" />
-      <entry key="W1" value="1.9999991564879138" />
+      <entry key="MS100" value="1.000000000000001" />
+      <entry key="MS500" value="1.0010166226539885" />
+      <entry key="S2" value="1.1785623717402811" />
+      <entry key="S5" value="1.5020141728536762" />
+      <entry key="S10" value="1.7085295850235727" />
+      <entry key="S30" value="1.8914959153248359" />
+      <entry key="S60" value="1.9444331322544164" />
+      <entry key="M2" value="1.988927609493567" />
+      <entry key="M5" value="2.2563950272688382" />
+      <entry key="M10" value="2.7127421933765725" />
+      <entry key="M15" value="3.0241971030522943" />
+      <entry key="M30" value="3.6350369352269754" />
+      <entry key="H1" value="4.348693283488408" />
+      <entry key="H2" value="4.989632420304778" />
+      <entry key="H4" value="5.4356786090528475" />
+      <entry key="D1" value="5.896321385933056" />
+      <entry key="W1" value="5.98493206941781" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
@@ -91,23 +110,23 @@
       <entry key="W1" value="0.0" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.01164991935514871" />
-      <entry key="MS500" value="0.7145260774186923" />
-      <entry key="S2" value="1.5462286347498473" />
-      <entry key="S5" value="1.8043767300256062" />
-      <entry key="S10" value="1.8996717420400686" />
-      <entry key="S30" value="1.9659818684390578" />
-      <entry key="S60" value="1.982917979823459" />
-      <entry key="M2" value="1.9914406729944099" />
-      <entry key="M5" value="1.9965718630741156" />
-      <entry key="M10" value="1.9982851963428725" />
-      <entry key="M15" value="1.9988566341231309" />
-      <entry key="M30" value="1.9994282353265935" />
-      <entry key="H1" value="1.9997140972266318" />
-      <entry key="H2" value="1.9998570435037843" />
-      <entry key="H4" value="1.999928520474464" />
-      <entry key="D1" value="1.9999880865683193" />
-      <entry key="W1" value="1.9999982980768436" />
+      <entry key="MS100" value="1.86560100966197E-5" />
+      <entry key="MS500" value="0.1133137717839445" />
+      <entry key="S2" value="0.6547860565725466" />
+      <entry key="S5" value="1.1584388989565262" />
+      <entry key="S10" value="1.4919243348492657" />
+      <entry key="S30" value="1.8054827101725683" />
+      <entry key="S60" value="1.8993884637721126" />
+      <entry key="M2" value="1.9658670153759776" />
+      <entry key="M5" value="2.2470241156873643" />
+      <entry key="M10" value="2.708019091350624" />
+      <entry key="M15" value="3.02103068456411" />
+      <entry key="M30" value="3.6334179458086133" />
+      <entry key="H1" value="4.347849532576492" />
+      <entry key="H2" value="4.989192375680595" />
+      <entry key="H4" value="5.435451869595783" />
+      <entry key="D1" value="5.8962824038876125" />
+      <entry key="W1" value="5.984926467327743" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -190,6 +209,15 @@
       <option name="presentableId" value="Default" />
       <updated>1793329737106</updated>
     </task>
+    <task id="LOCAL-00001" summary="Merge remote-tracking branch 'origin/dev_yeffersonlrodrigueza' into dev_sebastian-arcila&#10;&#10;# Conflicts:&#10;#&#9;.idea/misc.xml&#10;#&#9;.idea/vcs.xml&#10;#&#9;pom.xml&#10;#&#9;src/main/java/module-info.java">
+      <option name="closed" value="true" />
+      <created>1794715001102</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1794715001102</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -217,5 +245,21 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Merge remote-tracking branch 'origin/dev_yeffersonlrodrigueza' into dev_sebastian-arcila&#10;&#10;# Conflicts:&#10;#&#9;.idea/misc.xml&#10;#&#9;.idea/vcs.xml&#10;#&#9;pom.xml&#10;#&#9;src/main/java/module-info.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/dev_yeffersonlrodrigueza' into dev_sebastian-arcila&#10;&#10;# Conflicts:&#10;#&#9;.idea/misc.xml&#10;#&#9;.idea/vcs.xml&#10;#&#9;pom.xml&#10;#&#9;src/main/java/module-info.java" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="NONE" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/demo/application/CineApplication.java</url>
+          <line>11</line>
+          <placement>INTER_LINE</placement>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

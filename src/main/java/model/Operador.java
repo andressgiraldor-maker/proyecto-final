@@ -17,6 +17,9 @@ public class Operador extends Persona {
     }
 
     public void setCodigoEmpleado(String codigoEmpleado) {
+        if (codigoEmpleado == null || codigoEmpleado.trim().isEmpty()) {
+            throw new IllegalArgumentException("El codigo del empleado no puede estar vacio");
+        }
         this.codigoEmpleado = codigoEmpleado;
     }
 
@@ -28,7 +31,9 @@ public class Operador extends Persona {
     @Override
     public String toString() {
         return "Operador{" +
-                "codigoEmpleado='" + codigoEmpleado + '\'' +
+                "identificacion='" + getIdentificacion() + '\'' +
+                ", nombre='" + getNombre() + '\'' +
+                ", codigoEmpleado='" + codigoEmpleado + '\'' +
                 '}';
     }
 }

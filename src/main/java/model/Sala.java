@@ -5,103 +5,71 @@ import java.util.List;
 
 public class Sala implements Deshabilitable {
 
-    //Atributos de la clase Sala
     private String codigo;
     private String nombre;
     private int capacidad;
-    EstadoSala estadoSala;
-
-    //Relaicones de la clase Sala
-    private List<Funcion> listSalaFunciones;
+    private EstadoSala estadoSala;
     private List<Asiento> listSalaAsientos;
-    private Cine cine;
 
-    /**
-     * metodo constructor de la clase Sala
-     * @param codigo de la sala
-     * @param nombre de la sala
-     * @param capacidad de la sala
-     * @param estadoSala de la sala
-     * @param listSalaFunciones de la sala
-     * @param listSalaAsientos de la sala
-     * @param cine de la sala
-     */
-    public Sala(String codigo, String nombre, int capacidad, EstadoSala estadoSala, List<Funcion> listSalaFunciones, List<Asiento> listSalaAsientos, Cine cine) {
+    public Sala(String codigo, String nombre, int capacidad, EstadoSala estadoSala) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.capacidad = capacidad;
         this.estadoSala = estadoSala;
-        this.listSalaFunciones = new ArrayList<>();
         this.listSalaAsientos = new ArrayList<>();
-        this.cine = cine;
     }
 
-    public String getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public int getCapacidad() {
-        return capacidad;
-    }
-
-    public void setCapacidad(int capacidad) {
-        this.capacidad = capacidad;
-    }
-
-    public EstadoSala getEstadoSala() {
-        return estadoSala;
-    }
-
-    public void setEstadoSala(EstadoSala estadoSala) {
-        this.estadoSala = estadoSala;
-    }
-
-    public List<Funcion> getListSalaFunciones() {
-        return listSalaFunciones;
-    }
-
-    public void setListSalaFunciones(List<Funcion> listSalaFunciones) {
-        this.listSalaFunciones = listSalaFunciones;
-    }
-
-    public List<Asiento> getListSalaAsientos() {
-        return listSalaAsientos;
-    }
-
-    public void setListSalaAsientos(List<Asiento> listSalaAsientos) {
-        this.listSalaAsientos = listSalaAsientos;
-    }
-
-    public Cine getCine() {
-        return cine;
-    }
-
-    public void setCine(Cine cine) {
-        this.cine = cine;
+    // ===== LOS 3 DE LA INTERFAZ Deshabilitable - TODOS CON @Override =====
+    @Override
+    public void habilitar() {
+        this.estadoSala = EstadoSala.DISPONIBLE;
     }
 
     @Override
+    public void deshabilitar() {
+        this.estadoSala = EstadoSala.FUERA_DE_SERVICIO;
+    }
+
+    @Override
+    public boolean estaDeshabilitado() {
+        return estadoSala == EstadoSala.FUERA_DE_SERVICIO;
+    }
+
+    // ===== PROPIO DE Sala - SIN @Override =====
+    // Quitale el @Override a este, por eso te salia "Method does not override"
+    public boolean estaDisponible() {
+        return estadoSala == EstadoSala.DISPONIBLE;
+    }
+
+    // ===== Generar asientos - ARREGLADO: Asiento ahora recibe 4 argumentos, no 5 =====
+    public void generarAsientos(int filas, int columnas) {
+        listSalaAsientos.clear();
+        for (int f = 0; f < filas; f++) {
+            char filaChar = (char) ('A' + f);
+            for (int n = 1; n <= columnas; n++) {
+                String codigoAsiento = codigo + "-" + filaChar + n;
+                // ANTES (mal): new Asiento(codigoAsiento, filaChar, n, null, DISPONIBLE) -> 5 args
+                // AHORA (bien): 4 args
+                listSalaAsientos.add(new Asiento(codigoAsiento, filaChar, n, EstadoAsiento.DISPONIBLE));
+            }
+        }
+        this.capacidad = listSalaAsientos.size();
+    }
+
+    // ===== Getters y Setters =====
+    public String getCodigo() { return codigo; }
+    public void setCodigo(String codigo) { this.codigo = codigo; }
+    public String getNombre() { return nombre; }
+    public void setNombre(String nombre) { this.nombre = nombre; }
+    public int getCapacidad() { return capacidad; }
+    public void setCapacidad(int capacidad) { this.capacidad = capacidad; }
+    public EstadoSala getEstadoSala() { return estadoSala; }
+    public void setEstadoSala(EstadoSala estadoSala) { this.estadoSala = estadoSala; }
+    public List<Asiento> getListSalaAsientos() { return listSalaAsientos; }
+    public void setListSalaAsientos(List<Asiento> listSalaAsientos) { this.listSalaAsientos = listSalaAsientos; }
+
+    @Override
     public String toString() {
-        return "Sala{" +
-                "codigo='" + codigo + '\'' +
-                ", nombre='" + nombre + '\'' +
-                ", capacidad=" + capacidad +
-                ", estadoSala=" + estadoSala +
-                ", listSalaFunciones=" + listSalaFunciones +
-                ", listSalaAsientos=" + listSalaAsientos +
-                ", cine=" + cine +
-                '}';
+        return "Sala{" + "codigo='" + codigo + '\'' + ", nombre='" + nombre + '\'' + ", capacidad=" + capacidad + ", estado=" + estadoSala + '}';
     }
 }

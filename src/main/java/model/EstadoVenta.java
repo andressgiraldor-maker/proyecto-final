@@ -1,6 +1,6 @@
 package model;
 
 public enum EstadoVenta {
-    ACTIVADA,
+    ACTIVA,
     CANCELADA
 }

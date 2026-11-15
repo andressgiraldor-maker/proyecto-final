@@ -1,7 +1,5 @@
 package model;
 
 public enum TipoEntrada {
-    GENERAL,
-    VIP,
-    ESTUDIANTE
+    GENERAL, ESTUDIANTE, NINO, ADULTO_MAYOR
 }
