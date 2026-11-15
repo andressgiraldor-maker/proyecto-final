@@ -1,18 +1,14 @@
-module com.example.empresajfx {
+module uniquindio.edu.co {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.desktop;
 
-    opens model to javafx.fxml;
-    opens app to javafx.fxml;
-    opens com.example.demo.viewController to javafx.fxml;
-    opens com.example.demo.model to javafx.base, javafx.fxml;
-
-    exports model;
-    exports app;
-    exports exception;
-    exports service;
-    exports com.example.demo.application;
-    exports com.example.demo.controller;
-    exports com.example.demo.model;
+    opens uniquindio.edu.co.application to javafx.fxml;
+    exports uniquindio.edu.co.application;
+    opens uniquindio.edu.co.controller to javafx.fxml;
+    exports uniquindio.edu.co.controller;
+    opens uniquindio.edu.co.model to javafx.base, javafx.fxml;
+    exports uniquindio.edu.co.model;
+    opens uniquindio.edu.co.viewController to javafx.fxml;
+    exports uniquindio.edu.co.viewController;
 }
