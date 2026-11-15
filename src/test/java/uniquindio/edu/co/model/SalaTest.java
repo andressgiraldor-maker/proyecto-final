@@ -39,9 +39,36 @@ class SalaTest {
 
     @Test
     void agregarAsiento() {
+        sala.agregarAsiento('A', 1);
+
+        assertNotNull(sala.buscarAsiento('A', 1));
     }
 
     @Test
     void modificarAsiento() {
+        sala.agregarAsiento('A', 1);
+
+        sala.modificarAsiento('A', 1, 'B', 5);
+
+        assertNull(sala.buscarAsiento('A', 1));
+        assertNotNull(sala.buscarAsiento('B', 5));
+
     }
+
+    @Test
+    void deshabilitar(){
+        sala.deshabilitar();
+        assertEquals(EstadoSala.FUERA_DE_SERVICIO, sala.getEstado());
+    }
+
+    @Test
+    void eliminarAsiento(){
+        sala.agregarAsiento('A', 1);
+
+        sala.eliminarAsiento('A', 1);
+
+        assertNull(sala.buscarAsiento('A', 1));
+    }
+
+
 }

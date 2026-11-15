@@ -6,52 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="1897d635-130f-41be-846c-a44918178132" name="Changes" comment="app">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/application/CineApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/application/CineApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/ModelFactoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/controller/ModelFactoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/Administrador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/Administrador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/Asiento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/Asiento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/Cine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/Cine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/Clasificacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/Clasificacion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/Cliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/Deshabilitable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/Deshabilitable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/Entrada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/Entrada.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/EstadoAsiento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/EstadoAsiento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/EstadoFuncion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/EstadoFuncion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/EstadoPelicula.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/EstadoPelicula.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/EstadoSala.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/EstadoSala.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/EstadoVenta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/EstadoVenta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/Funcion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/Funcion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/Genero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/Genero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/Operador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/Operador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/Pelicula.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/Pelicula.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/Persona.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/Persona.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/ReporteOcupacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/ReporteOcupacion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/Sala.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/Sala.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/Tarifa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/Tarifa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/TipoCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/TipoCliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/TipoEntrada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/TipoEntrada.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/Venta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/Venta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/viewController/AsientosViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/viewController/AsientosViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/viewController/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/viewController/MainViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/viewController/PeliculasViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/viewController/PeliculasViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/viewController/PersonasViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/viewController/PersonasViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/viewController/SalasViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/viewController/SalasViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/uniquindio/edu/co/hello-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo/view/asientos-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/uniquindio/edu/co/view/asientos-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo/view/main-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/uniquindio/edu/co/view/main-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo/view/peliculas-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/uniquindio/edu/co/view/peliculas-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo/view/personas-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/uniquindio/edu/co/view/personas-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo/view/salas-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/uniquindio/edu/co/view/salas-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/demo/model/AdministradorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/AdministradorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/demo/model/AsientoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/AsientoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/demo/model/CineTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/CineTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/demo/model/ClienteTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/ClienteTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/demo/model/FuncionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/FuncionTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/demo/model/OperadorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/OperadorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/demo/model/PeliculaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/PeliculaTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/demo/model/SalaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/SalaTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/demo/model/VentaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/VentaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/Cine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/Cine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/AsientoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/AsientoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/CineTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/CineTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/FuncionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/FuncionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/PeliculaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/PeliculaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/SalaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/SalaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/VentaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/VentaTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +29,7 @@
         <option value="Enum" />
         <option value="Record" />
         <option value="module-info" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -86,7 +50,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/andressgiraldor-maker/proyecto-final.git&quot;,
-    &quot;accountId&quot;: &quot;440b168f-a21a-4864-a781-9888b1034c8d&quot;
+    &quot;accountId&quot;: &quot;fce9a3bd-fa43-4ec5-a59f-0e32c558eed3&quot;
   }
 }</component>
   <component name="MavenImportPreferences">
@@ -169,12 +133,65 @@
     "Application.CineApplication.executor": "Run",
     "Application.Main.executor": "Run",
     "Application.uniquindio.edu.co.application.CineApplication.executor": "Run",
+    "JUnit.CineTest.agregarAsiento.executor": "Run",
+    "JUnit.CineTest.buscarAdministrador.executor": "Run",
+    "JUnit.CineTest.buscarCliente.executor": "Run",
+    "JUnit.CineTest.buscarFuncion.executor": "Run",
+    "JUnit.CineTest.buscarOperador.executor": "Run",
+    "JUnit.CineTest.buscarPelicula.executor": "Run",
+    "JUnit.CineTest.buscarPersona.executor": "Run",
+    "JUnit.CineTest.buscarSala.executor": "Run",
+    "JUnit.CineTest.buscarVenta.executor": "Run",
+    "JUnit.CineTest.calcularTotalIngresos.executor": "Run",
+    "JUnit.CineTest.calcularValorEntrada.executor": "Run",
+    "JUnit.CineTest.cancelarVenta.executor": "Run",
+    "JUnit.CineTest.consultarAsientosDeSala.executor": "Run",
+    "JUnit.CineTest.consultarAsientosDisponibles.executor": "Run",
+    "JUnit.CineTest.consultarFunciones.executor": "Run",
+    "JUnit.CineTest.consultarFuncionesPorFecha.executor": "Run",
+    "JUnit.CineTest.consultarPeliculasDisponibles.executor": "Run",
+    "JUnit.CineTest.contarEntradasVendidas.executor": "Run",
+    "JUnit.CineTest.deshabilitarPelicula.executor": "Run",
+    "JUnit.CineTest.deshabilitarSala.executor": "Run",
+    "JUnit.CineTest.eliminarAsiento.executor": "Run",
+    "JUnit.CineTest.eliminarPelicula.executor": "Run",
+    "JUnit.CineTest.eliminarPersona.executor": "Run",
+    "JUnit.CineTest.eliminarSala.executor": "Run",
+    "JUnit.CineTest.generarReporteOcupacion.executor": "Run",
+    "JUnit.CineTest.modificarAdministrador.executor": "Run",
+    "JUnit.CineTest.modificarAsiento.executor": "Run",
+    "JUnit.CineTest.modificarCliente.executor": "Run",
+    "JUnit.CineTest.modificarOperador.executor": "Run",
+    "JUnit.CineTest.modificarPelicula.executor": "Run",
+    "JUnit.CineTest.modificarSala.executor": "Run",
+    "JUnit.CineTest.modificarTarifa.executor": "Run",
+    "JUnit.CineTest.obtenerPeliculaMasVendida.executor": "Run",
+    "JUnit.CineTest.programarFuncion.executor": "Run",
+    "JUnit.CineTest.registrarAdministrador.executor": "Run",
+    "JUnit.CineTest.registrarCliente.executor": "Run",
+    "JUnit.CineTest.registrarOperador.executor": "Run",
+    "JUnit.CineTest.registrarPelicula.executor": "Run",
+    "JUnit.CineTest.registrarSala.executor": "Run",
+    "JUnit.CineTest.registrarTarifa.executor": "Run",
+    "JUnit.CineTest.venderEntrada.executor": "Run",
+    "JUnit.FuncionTest.calcularValorEntrada.executor": "Run",
+    "JUnit.PeliculaTest.deshabilitar.executor": "Run",
+    "JUnit.PeliculaTest.estaDisponible.executor": "Run",
+    "JUnit.SalaTest.agregarAsiento.executor": "Run",
+    "JUnit.SalaTest.deshabilitar.executor": "Run",
+    "JUnit.SalaTest.eliminarAsiento.executor": "Run",
+    "JUnit.SalaTest.modificarAsiento.executor": "Run",
+    "JUnit.VentaTest.cancelar.executor": "Run",
+    "JUnit.VentaTest.estaActiva.executor": "Run",
+    "JUnit.VentaTest.generarEntrada.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "dev__yeffersonlrodrigueza",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "andres-realpe",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.jshint": "true",
@@ -194,59 +211,109 @@
       <recent name="C:\Users\USUARIO\OneDrive\Desktop\Programación 20261\PGI-20261\proyecto-final\src\main\java" />
       <recent name="C:\Users\USUARIO\OneDrive\Desktop\Programación 20261\PGI-20261\proyecto-final\src\main\java\app" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="uniquindio.edu.co.model" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.uniquindio.edu.co.application.CineApplication">
-    <configuration name="CineApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.demo.application.CineApplication" />
-      <module name="empresaJFX" />
+  <component name="RunManager" selected="JUnit.AsientoTest.liberar">
+    <configuration name="AsientoTest.liberar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.demo.application.*" />
+          <option name="PATTERN" value="uniquindio.edu.co.model.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="uniquindio.edu.co.model" />
+      <option name="MAIN_CLASS_NAME" value="uniquindio.edu.co.model.AsientoTest" />
+      <option name="METHOD_NAME" value="liberar" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="app.Main" />
-      <module name="empresaJFX" />
+    <configuration name="AsientoTest.ocupar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="app.*" />
+          <option name="PATTERN" value="uniquindio.edu.co.model.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="uniquindio.edu.co.model" />
+      <option name="MAIN_CLASS_NAME" value="uniquindio.edu.co.model.AsientoTest" />
+      <option name="METHOD_NAME" value="ocupar" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="uniquindio.edu.co.application.CineApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="uniquindio.edu.co.application.CineApplication" />
-      <module name="empresaJFX" />
+    <configuration name="VentaTest.cancelar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uniquindio.edu.co.application.*" />
+          <option name="PATTERN" value="uniquindio.edu.co.model.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="uniquindio.edu.co.model" />
+      <option name="MAIN_CLASS_NAME" value="uniquindio.edu.co.model.VentaTest" />
+      <option name="METHOD_NAME" value="cancelar" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VentaTest.estaActiva" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="uniquindio.edu.co.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="uniquindio.edu.co.model" />
+      <option name="MAIN_CLASS_NAME" value="uniquindio.edu.co.model.VentaTest" />
+      <option name="METHOD_NAME" value="estaActiva" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VentaTest.generarEntrada" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="uniquindio.edu.co.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="uniquindio.edu.co.model" />
+      <option name="MAIN_CLASS_NAME" value="uniquindio.edu.co.model.VentaTest" />
+      <option name="METHOD_NAME" value="generarEntrada" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.uniquindio.edu.co.application.CineApplication" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.CineApplication" />
+        <item itemvalue="JUnit.AsientoTest.liberar" />
+        <item itemvalue="JUnit.AsientoTest.ocupar" />
+        <item itemvalue="JUnit.VentaTest.generarEntrada" />
+        <item itemvalue="JUnit.VentaTest.cancelar" />
+        <item itemvalue="JUnit.VentaTest.estaActiva" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-30f59d01ecdd-ac68fc9d2b05-intellij.indexing.shared.core-IU-263.7307.200" />
+        <option value="bundled-jdk-30f59d01ecdd-63390994e64e-intellij.indexing.shared.core-IU-262.8665.337" />
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.8665.337" />
       </set>
     </attachedChunks>
   </component>
@@ -307,16 +374,5 @@
     <MESSAGE value="Merge remote-tracking branch 'origin/dev_yeffersonlrodrigueza' into dev_sebastian-arcila&#10;&#10;# Conflicts:&#10;#&#9;.idea/misc.xml&#10;#&#9;.idea/vcs.xml&#10;#&#9;pom.xml&#10;#&#9;src/main/java/module-info.java" />
     <MESSAGE value="app" />
     <option name="LAST_COMMIT_MESSAGE" value="app" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uniquindio/edu/co/application/CineApplication.java</url>
-          <line>10</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

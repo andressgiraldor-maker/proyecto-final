@@ -22,9 +22,19 @@ class AsientoTest {
 
     @Test
     void ocupar() {
+        asiento.ocupar();
+
+        assertEquals(EstadoAsiento.OCUPADO, asiento.getEstado());
     }
 
     @Test
     void liberar() {
+        asiento.ocupar();
+
+        asiento.liberar();
+
+        assertEquals(EstadoAsiento.DISPONIBLE, asiento.getEstado());
     }
+
+
 }

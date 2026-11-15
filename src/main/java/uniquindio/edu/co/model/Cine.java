@@ -252,17 +252,14 @@ public class Cine
     private Sala obtenerSalaEditable(String codigoSala)
     {
         Sala sala = buscarSala(codigoSala);
-
         if (sala == null)
         {
             throw new IllegalArgumentException("No existe una sala con el codigo " + codigoSala);
         }
-
         if (salaTieneFunciones(codigoSala))
         {
             throw new IllegalStateException("No se pueden modificar los asientos de una sala con funciones asociadas");
         }
-
         return sala;
     }
 

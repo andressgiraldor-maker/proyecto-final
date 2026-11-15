@@ -20,4 +20,10 @@ class PeliculaTest {
         assertTrue(disponible);
 
     }
+
+    @Test
+    void deshabilitar(){
+        pelicula.deshabilitar();
+        assertEquals(EstadoPelicula.NO_DISPONIBLE, pelicula.getEstado());
+    }
 }

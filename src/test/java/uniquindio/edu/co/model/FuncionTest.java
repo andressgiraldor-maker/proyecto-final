@@ -46,6 +46,7 @@ class FuncionTest {
 
     @Test
     void calcularValorEntrada() {
+        assertEquals(30, funcion.calcularValorEntrada(0), 0.0001);
 
     }
 
