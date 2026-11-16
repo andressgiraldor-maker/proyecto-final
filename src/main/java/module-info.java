@@ -8,8 +8,10 @@ module cine {
     opens uniquindio.edu.co.viewController to javafx.fxml;
     exports uniquindio.edu.co.viewController;
 
-    opens model to javafx.fxml;
+    opens model;
     exports model;
+
+    requires org.junit.jupiter.api;
 
     opens uniquindio.edu.co.application to javafx.fxml;
     exports uniquindio.edu.co.application;

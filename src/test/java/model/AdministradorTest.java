@@ -1,6 +1,4 @@
-package uniquindio.edu.co.model;
-
-import model.Administrador;
+package model;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;

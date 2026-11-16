@@ -1,9 +1,4 @@
-package uniquindio.edu.co.model;
-
-import model.ClasificacionPelicula;
-import model.EstadoPelicula;
-import model.GeneroPelicula;
-import model.Pelicula;
+package model;
 
 import org.junit.jupiter.api.Test;
 
@@ -25,15 +20,17 @@ class PeliculaTest {
         assertFalse(pelicula.estaDisponible());
     }
 
-    @Test
-    void deshabilitar() {
-        pelicula.deshabilitar();
-        assertTrue(pelicula.estaDeshabilitado());
-    }
 
     @Test
     void deshabilitar(){
         pelicula.deshabilitar();
-        assertEquals(EstadoPelicula.NO_DISPONIBLE, pelicula.getEstado());
+        assertEquals(EstadoPelicula.NO_DISPONIBLE, pelicula.getEstadoPelicula());
+    }
+
+    @Test
+    void habilitar(){
+        pelicula.deshabilitar();
+        pelicula.habilitar();
+        assertEquals(EstadoPelicula.DISPONIBLE, pelicula.getEstadoPelicula());
     }
 }

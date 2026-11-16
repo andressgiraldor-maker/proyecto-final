@@ -1,6 +1,4 @@
-package uniquindio.edu.co.model;
-
-import model.Operador;
+package model;
 
 import org.junit.jupiter.api.Test;
 

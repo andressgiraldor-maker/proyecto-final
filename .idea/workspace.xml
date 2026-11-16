@@ -5,16 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1897d635-130f-41be-846c-a44918178132" name="Changes" comment="app">
+      <change afterPath="$PROJECT_DIR$/src/test/java/model/AsientoTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/model/CineTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/model/FuncionTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/model/SalaTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/model/VentaTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/Cine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/Cine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/AsientoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/AsientoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/CineTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/CineTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/FuncionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/FuncionTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/PeliculaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/PeliculaTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/SalaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/SalaTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/VentaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/VentaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/AdministradorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/AdministradorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/AsientoTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/CineTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/ClienteTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/ClienteTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/FuncionTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/OperadorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/OperadorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/PeliculaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/PeliculaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/SalaTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/VentaTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,6 +139,12 @@
     "Application.CineApplication.executor": "Run",
     "Application.Main.executor": "Run",
     "Application.uniquindio.edu.co.application.CineApplication.executor": "Run",
+    "JUnit.AdministradorTest.obtenerRol.executor": "Run",
+    "JUnit.AsientoTest.estaDisponible.executor": "Run",
+    "JUnit.AsientoTest.liberar.executor": "Run",
+    "JUnit.AsientoTest.liberarCambiaElEstadoADisponible.executor": "Run",
+    "JUnit.AsientoTest.liberarUnAsientoYaDisponibleSigueDisponible.executor": "Run",
+    "JUnit.AsientoTest.ocuparCambiaElEstadoAOcupado.executor": "Run",
     "JUnit.CineTest.agregarAsiento.executor": "Run",
     "JUnit.CineTest.buscarAdministrador.executor": "Run",
     "JUnit.CineTest.buscarCliente.executor": "Run",
@@ -141,12 +153,15 @@
     "JUnit.CineTest.buscarPelicula.executor": "Run",
     "JUnit.CineTest.buscarPersona.executor": "Run",
     "JUnit.CineTest.buscarSala.executor": "Run",
+    "JUnit.CineTest.buscarTarifa.executor": "Run",
     "JUnit.CineTest.buscarVenta.executor": "Run",
+    "JUnit.CineTest.buscarVentasPorCodigo.executor": "Run",
     "JUnit.CineTest.calcularTotalIngresos.executor": "Run",
     "JUnit.CineTest.calcularValorEntrada.executor": "Run",
     "JUnit.CineTest.cancelarVenta.executor": "Run",
     "JUnit.CineTest.consultarAsientosDeSala.executor": "Run",
     "JUnit.CineTest.consultarAsientosDisponibles.executor": "Run",
+    "JUnit.CineTest.consultarDetalleAsientosFuncion.executor": "Run",
     "JUnit.CineTest.consultarFunciones.executor": "Run",
     "JUnit.CineTest.consultarFuncionesPorFecha.executor": "Run",
     "JUnit.CineTest.consultarPeliculasDisponibles.executor": "Run",
@@ -158,6 +173,8 @@
     "JUnit.CineTest.eliminarPersona.executor": "Run",
     "JUnit.CineTest.eliminarSala.executor": "Run",
     "JUnit.CineTest.generarReporteOcupacion.executor": "Run",
+    "JUnit.CineTest.habilitarPelicula.executor": "Run",
+    "JUnit.CineTest.habilitarSala.executor": "Run",
     "JUnit.CineTest.modificarAdministrador.executor": "Run",
     "JUnit.CineTest.modificarAsiento.executor": "Run",
     "JUnit.CineTest.modificarCliente.executor": "Run",
@@ -174,12 +191,27 @@
     "JUnit.CineTest.registrarSala.executor": "Run",
     "JUnit.CineTest.registrarTarifa.executor": "Run",
     "JUnit.CineTest.venderEntrada.executor": "Run",
+    "JUnit.CineTest.venderVariasEntradas.executor": "Run",
+    "JUnit.FuncionTest.buscarAsiento.executor": "Run",
+    "JUnit.FuncionTest.calcularPorcentajeOcupacion.executor": "Run",
     "JUnit.FuncionTest.calcularValorEntrada.executor": "Run",
+    "JUnit.FuncionTest.contarAsientosDisponiblesConTodosLibres.executor": "Run",
+    "JUnit.FuncionTest.contarAsientosOcupados.executor": "Run",
+    "JUnit.FuncionTest.contarAsientosOcupadosCuentaLosOcupados.executor": "Run",
+    "JUnit.FuncionTest.estaDisponible.executor": "Run",
+    "JUnit.FuncionTest.estaProgramadaEsTrueCuandoEstaProgramada.executor": "Run",
+    "JUnit.FuncionTest.getAsientosDisponibles.executor": "Run",
     "JUnit.PeliculaTest.deshabilitar.executor": "Run",
+    "JUnit.PeliculaTest.estaDeshabilitado.executor": "Run",
     "JUnit.PeliculaTest.estaDisponible.executor": "Run",
+    "JUnit.PeliculaTest.habilitar.executor": "Run",
     "JUnit.SalaTest.agregarAsiento.executor": "Run",
     "JUnit.SalaTest.deshabilitar.executor": "Run",
     "JUnit.SalaTest.eliminarAsiento.executor": "Run",
+    "JUnit.SalaTest.estaDeshabilitado.executor": "Run",
+    "JUnit.SalaTest.estaDisponible.executor": "Run",
+    "JUnit.SalaTest.generarAsientos.executor": "Run",
+    "JUnit.SalaTest.habilitar.executor": "Run",
     "JUnit.SalaTest.modificarAsiento.executor": "Run",
     "JUnit.VentaTest.cancelar.executor": "Run",
     "JUnit.VentaTest.estaActiva.executor": "Run",
@@ -214,86 +246,90 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="model" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="model" />
       <recent name="uniquindio.edu.co.model" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AsientoTest.liberar">
-    <configuration name="AsientoTest.liberar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.CineTest.generarReporteOcupacion">
+    <configuration name="CineTest.calcularTotalIngresos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uniquindio.edu.co.model.*" />
+          <option name="PATTERN" value="model.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="uniquindio.edu.co.model" />
-      <option name="MAIN_CLASS_NAME" value="uniquindio.edu.co.model.AsientoTest" />
-      <option name="METHOD_NAME" value="liberar" />
+      <option name="PACKAGE_NAME" value="model" />
+      <option name="MAIN_CLASS_NAME" value="model.CineTest" />
+      <option name="METHOD_NAME" value="calcularTotalIngresos" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AsientoTest.ocupar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CineTest.consultarDetalleAsientosFuncion" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uniquindio.edu.co.model.*" />
+          <option name="PATTERN" value="model.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="uniquindio.edu.co.model" />
-      <option name="MAIN_CLASS_NAME" value="uniquindio.edu.co.model.AsientoTest" />
-      <option name="METHOD_NAME" value="ocupar" />
+      <option name="PACKAGE_NAME" value="model" />
+      <option name="MAIN_CLASS_NAME" value="model.CineTest" />
+      <option name="METHOD_NAME" value="consultarDetalleAsientosFuncion" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="VentaTest.cancelar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CineTest.contarEntradasVendidas" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uniquindio.edu.co.model.*" />
+          <option name="PATTERN" value="model.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="uniquindio.edu.co.model" />
-      <option name="MAIN_CLASS_NAME" value="uniquindio.edu.co.model.VentaTest" />
-      <option name="METHOD_NAME" value="cancelar" />
+      <option name="PACKAGE_NAME" value="model" />
+      <option name="MAIN_CLASS_NAME" value="model.CineTest" />
+      <option name="METHOD_NAME" value="contarEntradasVendidas" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="VentaTest.estaActiva" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CineTest.generarReporteOcupacion" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uniquindio.edu.co.model.*" />
+          <option name="PATTERN" value="model.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="uniquindio.edu.co.model" />
-      <option name="MAIN_CLASS_NAME" value="uniquindio.edu.co.model.VentaTest" />
-      <option name="METHOD_NAME" value="estaActiva" />
+      <option name="PACKAGE_NAME" value="model" />
+      <option name="MAIN_CLASS_NAME" value="model.CineTest" />
+      <option name="METHOD_NAME" value="generarReporteOcupacion" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="VentaTest.generarEntrada" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CineTest.obtenerPeliculaMasVendida" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uniquindio.edu.co.model.*" />
+          <option name="PATTERN" value="model.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="uniquindio.edu.co.model" />
-      <option name="MAIN_CLASS_NAME" value="uniquindio.edu.co.model.VentaTest" />
-      <option name="METHOD_NAME" value="generarEntrada" />
+      <option name="PACKAGE_NAME" value="model" />
+      <option name="MAIN_CLASS_NAME" value="model.CineTest" />
+      <option name="METHOD_NAME" value="obtenerPeliculaMasVendida" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -301,11 +337,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AsientoTest.liberar" />
-        <item itemvalue="JUnit.AsientoTest.ocupar" />
-        <item itemvalue="JUnit.VentaTest.generarEntrada" />
-        <item itemvalue="JUnit.VentaTest.cancelar" />
-        <item itemvalue="JUnit.VentaTest.estaActiva" />
+        <item itemvalue="JUnit.CineTest.generarReporteOcupacion" />
+        <item itemvalue="JUnit.CineTest.obtenerPeliculaMasVendida" />
+        <item itemvalue="JUnit.CineTest.calcularTotalIngresos" />
+        <item itemvalue="JUnit.CineTest.contarEntradasVendidas" />
+        <item itemvalue="JUnit.CineTest.consultarDetalleAsientosFuncion" />
       </list>
     </recent_temporary>
   </component>
@@ -374,5 +410,444 @@
     <MESSAGE value="Merge remote-tracking branch 'origin/dev_yeffersonlrodrigueza' into dev_sebastian-arcila&#10;&#10;# Conflicts:&#10;#&#9;.idea/misc.xml&#10;#&#9;.idea/vcs.xml&#10;#&#9;pom.xml&#10;#&#9;src/main/java/module-info.java" />
     <MESSAGE value="app" />
     <option name="LAST_COMMIT_MESSAGE" value="app" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/model/FuncionTest.java</url>
+          <line>71</line>
+          <properties class="model.FuncionTest" method="getAsientosDisponibles">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/model/FuncionTest.java</url>
+          <line>64</line>
+          <properties class="model.FuncionTest" method="calcularPorcentajeOcupacion">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/model/FuncionTest.java</url>
+          <line>58</line>
+          <properties class="model.FuncionTest" method="contarAsientosOcupadosCuentaLosOcupados">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/model/FuncionTest.java</url>
+          <line>53</line>
+          <properties class="model.FuncionTest" method="contarAsientosOcupados">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/model/FuncionTest.java</url>
+          <line>48</line>
+          <properties class="model.FuncionTest" method="contarAsientosDisponiblesConTodosLibres">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/model/FuncionTest.java</url>
+          <line>40</line>
+          <properties class="model.FuncionTest" method="buscarAsiento">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/model/FuncionTest.java</url>
+          <line>33</line>
+          <properties class="model.FuncionTest" method="estaDisponible">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/model/FuncionTest.java</url>
+          <line>28</line>
+          <properties class="model.FuncionTest" method="estaProgramadaEsTrueCuandoEstaProgramada">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/model/FuncionTest.java</url>
+          <line>14</line>
+          <properties class="model.FuncionTest" method="setUp">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/model/SalaTest.java</url>
+          <line>35</line>
+          <properties class="model.SalaTest" method="generarAsientos">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/model/SalaTest.java</url>
+          <line>29</line>
+          <properties class="model.SalaTest" method="estaDisponible">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/model/SalaTest.java</url>
+          <line>23</line>
+          <properties class="model.SalaTest" method="estaDeshabilitado">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/model/SalaTest.java</url>
+          <line>17</line>
+          <properties class="model.SalaTest" method="deshabilitar">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/model/SalaTest.java</url>
+          <line>10</line>
+          <properties class="model.SalaTest" method="habilitar">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/model/CineTest.java</url>
+          <line>39</line>
+          <properties class="model.CineTest" method="registrarPelicula">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/model/CineTest.java</url>
+          <line>44</line>
+          <properties class="model.CineTest" method="modificarPelicula">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/model/CineTest.java</url>
+          <line>52</line>
+          <properties class="model.CineTest" method="deshabilitarPelicula">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/model/CineTest.java</url>
+          <line>58</line>
+          <properties class="model.CineTest" method="habilitarPelicula">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/model/CineTest.java</url>
+          <line>65</line>
+          <properties class="model.CineTest" method="buscarPelicula">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/model/CineTest.java</url>
+          <line>73</line>
+          <properties class="model.CineTest" method="registrarSala">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/model/CineTest.java</url>
+          <line>78</line>
+          <properties class="model.CineTest" method="modificarSala">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/model/CineTest.java</url>
+          <line>85</line>
+          <properties class="model.CineTest" method="deshabilitarSala">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/model/CineTest.java</url>
+          <line>91</line>
+          <properties class="model.CineTest" method="habilitarSala">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/model/CineTest.java</url>
+          <line>98</line>
+          <properties class="model.CineTest" method="buscarSala">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/model/CineTest.java</url>
+          <line>106</line>
+          <properties class="model.CineTest" method="registrarCliente">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/model/CineTest.java</url>
+          <line>111</line>
+          <properties class="model.CineTest" method="buscarCliente">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/model/CineTest.java</url>
+          <line>117</line>
+          <properties class="model.CineTest" method="buscarPersona">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/model/CineTest.java</url>
+          <line>124</line>
+          <properties class="model.CineTest" method="registrarTarifa">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/model/CineTest.java</url>
+          <line>130</line>
+          <properties class="model.CineTest" method="modificarTarifa">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/model/CineTest.java</url>
+          <line>136</line>
+          <properties class="model.CineTest" method="buscarTarifa">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/model/CineTest.java</url>
+          <line>143</line>
+          <properties class="model.CineTest" method="programarFuncion">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/model/CineTest.java</url>
+          <line>148</line>
+          <properties class="model.CineTest" method="buscarFuncion">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/model/CineTest.java</url>
+          <line>154</line>
+          <properties class="model.CineTest" method="consultarFunciones">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/model/CineTest.java</url>
+          <line>159</line>
+          <properties class="model.CineTest" method="consultarFuncionesPorFecha">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/model/CineTest.java</url>
+          <line>167</line>
+          <properties class="model.CineTest" method="calcularValorEntrada">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/model/CineTest.java</url>
+          <line>172</line>
+          <properties class="model.CineTest" method="venderEntrada">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/model/CineTest.java</url>
+          <line>179</line>
+          <properties class="model.CineTest" method="venderVariasEntradas">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/model/CineTest.java</url>
+          <line>187</line>
+          <properties class="model.CineTest" method="buscarVenta">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/model/CineTest.java</url>
+          <line>194</line>
+          <properties class="model.CineTest" method="buscarVentasPorCodigo">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/model/CineTest.java</url>
+          <line>200</line>
+          <properties class="model.CineTest" method="cancelarVenta">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="49" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/model/CineTest.java</url>
+          <line>209</line>
+          <properties class="model.CineTest" method="consultarPeliculasDisponibles">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="50" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/model/CineTest.java</url>
+          <line>216</line>
+          <properties class="model.CineTest" method="consultarAsientosDisponibles">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="51" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/model/CineTest.java</url>
+          <line>221</line>
+          <properties class="model.CineTest" method="consultarDetalleAsientosFuncion">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/model/CineTest.java</url>
+          <line>230</line>
+          <properties class="model.CineTest" method="contarEntradasVendidas">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/model/CineTest.java</url>
+          <line>236</line>
+          <properties class="model.CineTest" method="calcularTotalIngresos">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/model/CineTest.java</url>
+          <line>242</line>
+          <properties class="model.CineTest" method="obtenerPeliculaMasVendida">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="55" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/model/CineTest.java</url>
+          <line>248</line>
+          <properties class="model.CineTest" method="generarReporteOcupacion">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="56" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/model/FuncionTest.java</url>
+          <line>10</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/model/SalaTest.java</url>
+          <line>6</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -1,7 +1,4 @@
-package uniquindio.edu.co.model;
-
-import model.Cliente;
-import model.TipoCliente;
+package model;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
