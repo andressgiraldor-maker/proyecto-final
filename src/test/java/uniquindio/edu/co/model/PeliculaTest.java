@@ -1,23 +1,33 @@
-/**
- * Clase para probar los metodos de pelicula
- * @author Área de programación UQ
- * @since 2023-08
- *
- * Licencia GNU/GPL V3.0 (https://raw.githubusercontent.com/grid-uq/poo/main/LICENSE)
- */
 package uniquindio.edu.co.model;
+
+import model.ClasificacionPelicula;
+import model.EstadoPelicula;
+import model.GeneroPelicula;
+import model.Pelicula;
 
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class PeliculaTest {
-    Pelicula pelicula = new Pelicula("234567654", "coco", Genero.CIENCIA_FICCION,140,Clasificacion.MAYORES_12 );
+
+    Pelicula pelicula = new Pelicula("9876567", "cocito", GeneroPelicula.CIENCIA_FICCION, 130, ClasificacionPelicula.MAYORES_12, EstadoPelicula.DISPONIBLE);
 
     @Test
     void estaDisponible() {
-        boolean disponible = pelicula.estaDisponible();
-        assertTrue(disponible);
+        assertTrue(pelicula.estaDisponible());
+    }
 
+    @Test
+    void estaDeshabilitado() {
+        pelicula.deshabilitar();
+        assertTrue(pelicula.estaDeshabilitado());
+        assertFalse(pelicula.estaDisponible());
+    }
+
+    @Test
+    void deshabilitar() {
+        pelicula.deshabilitar();
+        assertTrue(pelicula.estaDeshabilitado());
     }
 }

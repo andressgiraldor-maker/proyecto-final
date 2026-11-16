@@ -1,11 +1,7 @@
-/**
- * Clase para probar los metodos de asiento
- * @author Área de programación UQ
- * @since 2023-08
- *
- * Licencia GNU/GPL V3.0 (https://raw.githubusercontent.com/grid-uq/poo/main/LICENSE)
- */
 package uniquindio.edu.co.model;
+
+import model.Asiento;
+import model.EstadoAsiento;
 
 import org.junit.jupiter.api.Test;
 
@@ -13,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class AsientoTest {
 
-    Asiento asiento = new Asiento('3', '5');
+    Asiento asiento = new Asiento("A1", 'A', 1, EstadoAsiento.DISPONIBLE);
 
     @Test
     void estaDisponible() {
@@ -22,9 +18,16 @@ class AsientoTest {
 
     @Test
     void ocupar() {
+        asiento.ocupar();
+        assertEquals(false, asiento.estaDisponible());
+        assertEquals(EstadoAsiento.OCUPADO, asiento.getEstadoAsiento());
     }
 
     @Test
     void liberar() {
+        asiento.ocupar();
+        asiento.liberar();
+        assertEquals(true, asiento.estaDisponible());
+        assertEquals(EstadoAsiento.DISPONIBLE, asiento.getEstadoAsiento());
     }
 }

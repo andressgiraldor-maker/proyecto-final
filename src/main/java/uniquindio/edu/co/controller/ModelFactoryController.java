@@ -1,22 +1,27 @@
 package uniquindio.edu.co.controller;
 
-import uniquindio.edu.co.model.Administrador;
-import uniquindio.edu.co.model.Asiento;
-import uniquindio.edu.co.model.Cine;
-import uniquindio.edu.co.model.Clasificacion;
-import uniquindio.edu.co.model.Cliente;
-import uniquindio.edu.co.model.Funcion;
-import uniquindio.edu.co.model.Genero;
-import uniquindio.edu.co.model.Operador;
-import uniquindio.edu.co.model.Pelicula;
-import uniquindio.edu.co.model.Persona;
-import uniquindio.edu.co.model.Sala;
-import uniquindio.edu.co.model.Tarifa;
-import uniquindio.edu.co.model.TipoEntrada;
-import uniquindio.edu.co.model.Venta;
+import model.Administrador;
+import model.Asiento;
+import model.EstadoFuncion;
+import model.Cine;
+import model.ClasificacionPelicula;
+import model.Cliente;
+import model.EstadoAsiento;
+import model.EstadoPelicula;
+import model.EstadoSala;
+import model.Funcion;
+import model.GeneroPelicula;
+import model.Operador;
+import model.Pelicula;
+import model.Persona;
+import model.Sala;
+import model.Tarifa;
+import model.TipoEntrada;
+import model.Venta;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ModelFactoryController
@@ -29,7 +34,11 @@ public class ModelFactoryController
     private ModelFactoryController()
     {
         cine = new Cine("CINEMAUQ", "Armenia, Quindio");
-        inicializarDatosPrueba();
+        try {
+            inicializarDatosPrueba();
+        } catch (Exception e) {
+            System.out.println("Error datos prueba: " + e.getMessage());
+        }
     }
 
     public static ModelFactoryController getInstance()
@@ -41,22 +50,17 @@ public class ModelFactoryController
         return instancia;
     }
 
-    private void inicializarDatosPrueba()
+    private void inicializarDatosPrueba() throws Exception
     {
-        cine.registrarTarifa(new Tarifa(TipoEntrada.GENERAL, 0.0));
-        cine.registrarTarifa(new Tarifa(TipoEntrada.ESTUDIANTE, 0.2));
-        cine.registrarTarifa(new Tarifa(TipoEntrada.NINO, 0.3));
-        cine.registrarTarifa(new Tarifa(TipoEntrada.ADULTO_MAYOR, 0.25));
-
-        Pelicula interestelar = new Pelicula("P001", "Interestelar", Genero.CIENCIA_FICCION, 169, Clasificacion.MAYORES_12);
+        Pelicula interestelar = new Pelicula("P001", "Interestelar", GeneroPelicula.CIENCIA_FICCION, 169, ClasificacionPelicula.MAYORES_12, EstadoPelicula.DISPONIBLE);
         cine.registrarPelicula(interestelar);
 
-        Sala sala1 = new Sala("S01", "Sala 1");
+        Sala sala1 = new Sala("S01", "Sala 1", 0, EstadoSala.DISPONIBLE);
         sala1.generarAsientos(5, 8);
         cine.registrarSala(sala1);
 
-        Funcion funcion1 = new Funcion("F001", interestelar, sala1, LocalDate.now(), LocalTime.of(18, 30), 15000);
-        cine.programarFuncion(funcion1);
+        Funcion funcion1 = new Funcion("F001", LocalDate.now(), LocalTime.of(18, 30), 15000, EstadoFuncion.PROGRAMADA, interestelar, sala1);
+        cine.programarFuncion(funcion1); // <-- ESTA LINEA FALTABA, si no, F001 no existe para vender
     }
 
     public String getNombreCine()
@@ -66,17 +70,15 @@ public class ModelFactoryController
 
     public List<Pelicula> consultarPeliculas()
     {
-        List<Pelicula> peliculas = cine.getPeliculas();
-        return peliculas;
+        return cine.getListCinePeliculas();
     }
 
     public List<Pelicula> consultarPeliculasDisponibles()
     {
-        List<Pelicula> peliculas = cine.consultarPeliculasDisponibles();
-        return peliculas;
+        return cine.consultarPeliculasDisponibles();
     }
 
-    public void registrarPelicula(Pelicula pelicula)
+    public void registrarPelicula(Pelicula pelicula) throws Exception
     {
         cine.registrarPelicula(pelicula);
     }
@@ -91,18 +93,23 @@ public class ModelFactoryController
         cine.deshabilitarPelicula(codigo);
     }
 
+    public void habilitarPelicula(String codigo)
+    {
+        cine.habilitarPelicula(codigo);
+    }
+
     public void eliminarPelicula(String codigo)
     {
-        cine.eliminarPelicula(codigo);
+        Pelicula p = cine.buscarPelicula(codigo);
+        if (p != null) cine.getListCinePeliculas().remove(p);
     }
 
     public List<Sala> consultarSalas()
     {
-        List<Sala> salas = cine.getSalas();
-        return salas;
+        return cine.getListCineSalas();
     }
 
-    public void registrarSala(Sala sala)
+    public void registrarSala(Sala sala) throws Exception
     {
         cine.registrarSala(sala);
     }
@@ -117,36 +124,64 @@ public class ModelFactoryController
         cine.deshabilitarSala(codigo);
     }
 
+    public void habilitarSala(String codigo)
+    {
+        cine.habilitarSala(codigo);
+    }
+
     public void eliminarSala(String codigo)
     {
-        cine.eliminarSala(codigo);
+        Sala s = cine.buscarSala(codigo);
+        if (s != null) cine.getListCineSalas().remove(s);
     }
 
     public List<Asiento> consultarAsientosSala(String codigoSala)
     {
-        List<Asiento> asientos = cine.consultarAsientosDeSala(codigoSala);
-        return asientos;
+        Sala s = cine.buscarSala(codigoSala);
+        if (s == null) return new ArrayList<>();
+        return s.getListSalaAsientos();
     }
 
     public void agregarAsiento(String codigoSala, char fila, int numero)
     {
-        cine.agregarAsiento(codigoSala, fila, numero);
+        Sala s = cine.buscarSala(codigoSala);
+        if (s != null) {
+            String codigoAsiento = codigoSala + "-" + fila + numero;
+            s.getListSalaAsientos().add(new Asiento(codigoAsiento, fila, numero, EstadoAsiento.DISPONIBLE));
+            s.setCapacidad(s.getListSalaAsientos().size());
+        }
     }
 
     public void modificarAsiento(String codigoSala, char filaActual, int numeroActual, char filaNueva, int numeroNuevo)
     {
-        cine.modificarAsiento(codigoSala, filaActual, numeroActual, filaNueva, numeroNuevo);
+        Sala s = cine.buscarSala(codigoSala);
+        if (s == null) return;
+        Asiento viejo = null;
+        for (Asiento a : s.getListSalaAsientos()) {
+            if (a.getFila() == filaActual && a.getNumero() == numeroActual) {
+                viejo = a;
+                break;
+            }
+        }
+        if (viejo != null) {
+            s.getListSalaAsientos().remove(viejo);
+            String codigoNuevo = codigoSala + "-" + filaNueva + numeroNuevo;
+            s.getListSalaAsientos().add(new Asiento(codigoNuevo, filaNueva, numeroNuevo, EstadoAsiento.DISPONIBLE));
+        }
     }
 
     public void eliminarAsiento(String codigoSala, char fila, int numero)
     {
-        cine.eliminarAsiento(codigoSala, fila, numero);
+        Sala s = cine.buscarSala(codigoSala);
+        if (s != null) {
+            s.getListSalaAsientos().removeIf(a -> a.getFila() == fila && a.getNumero() == numero);
+            s.setCapacidad(s.getListSalaAsientos().size());
+        }
     }
 
     public List<Persona> consultarPersonas()
     {
-        List<Persona> personas = cine.getPersonas();
-        return personas;
+        return cine.getListCinePersonas();
     }
 
     public void registrarCliente(Cliente cliente)
@@ -161,37 +196,49 @@ public class ModelFactoryController
 
     public void registrarAdministrador(Administrador administrador)
     {
-        cine.registrarAdministrador(administrador);
+        cine.getListCinePersonas().add(administrador);
     }
 
     public void modificarCliente(Cliente cliente)
     {
-        cine.modificarCliente(cliente);
+        cine.getListCineClientes().removeIf(c -> c.getIdentificacion().equals(cliente.getIdentificacion()));
+        cine.getListCineClientes().add(cliente);
+        cine.getListCinePersonas().removeIf(p -> p.getIdentificacion().equals(cliente.getIdentificacion()));
+        cine.getListCinePersonas().add(cliente);
     }
 
     public void modificarOperador(Operador operador)
     {
-        cine.modificarOperador(operador);
+        cine.getListCineOperadores().removeIf(o -> o.getIdentificacion().equals(operador.getIdentificacion()));
+        cine.getListCineOperadores().add(operador);
+        cine.getListCinePersonas().removeIf(p -> p.getIdentificacion().equals(operador.getIdentificacion()));
+        cine.getListCinePersonas().add(operador);
     }
 
     public void modificarAdministrador(Administrador administrador)
     {
-        cine.modificarAdministrador(administrador);
+        for (Persona p : cine.getListCinePersonas()) {
+            if (p.getIdentificacion().equals(administrador.getIdentificacion())) {
+                p.setNombre(administrador.getNombre());
+                break;
+            }
+        }
     }
 
     public void eliminarPersona(String identificacion)
     {
-        cine.eliminarPersona(identificacion);
+        cine.getListCinePersonas().removeIf(p -> p.getIdentificacion().equals(identificacion));
+        cine.getListCineClientes().removeIf(c -> c.getIdentificacion().equals(identificacion));
+        cine.getListCineOperadores().removeIf(o -> o.getIdentificacion().equals(identificacion));
     }
 
     public List<Funcion> consultarFunciones()
     {
-        List<Funcion> funciones = cine.consultarFunciones();
-        return funciones;
+        return cine.consultarFunciones();
     }
 
     // ===== FUNCIONES =====
-    public void programarFuncion(Funcion funcion) {
+    public void programarFuncion(Funcion funcion) throws Exception {
         cine.programarFuncion(funcion);
     }
 
@@ -205,6 +252,10 @@ public class ModelFactoryController
 
     public List<Asiento> consultarAsientosDisponibles(String codigoFuncion) throws Exception {
         return cine.consultarAsientosDisponibles(codigoFuncion);
+    }
+
+    public String consultarDetalleAsientosFuncion(String codigoFuncion) throws Exception {
+        return cine.consultarDetalleAsientosFuncion(codigoFuncion);
     }
 
     // ===== VENTAS - OPERADOR =====
@@ -223,12 +274,27 @@ public class ModelFactoryController
         return cine.venderEntrada(codVenta, cliente, funcion, tipo, fila, numero);
     }
 
+    public List<Venta> venderVariasEntradas(String codVenta, String codFuncion, String asientosTexto, String idCliente, TipoEntrada tipo) throws Exception {
+        if (asientosTexto == null || asientosTexto.isBlank()) throw new Exception("Debes escribir al menos un asiento. Ej: A1,A2");
+        Funcion funcion = cine.buscarFuncion(codFuncion);
+        if (funcion == null) throw new Exception("La funcion no existe: " + codFuncion);
+        Cliente cliente = cine.buscarCliente(idCliente);
+        if (cliente == null) throw new Exception("Cliente no existe: " + idCliente);
+
+        List<String> lista = new ArrayList<>();
+        for (String s : asientosTexto.split(",")) {
+            if (!s.trim().isEmpty()) lista.add(s.trim());
+        }
+        if (lista.isEmpty()) throw new Exception("No se detectaron asientos");
+        return cine.venderVariasEntradas(codVenta, cliente, funcion, tipo, lista);
+    }
+
     public void cancelarVenta(String codigoVenta) throws Exception {
         cine.cancelarVenta(codigoVenta);
     }
 
     public List<Venta> consultarVentas() {
-        return cine.getVentas();
+        return cine.getListCineVentas();
     }
 
     // ===== TARIFAS =====
@@ -241,7 +307,7 @@ public class ModelFactoryController
     }
 
     public List<Tarifa> consultarTarifas() {
-        return cine.getTarifas();
+        return cine.getListCineTarifas();
     }
 
     public Tarifa buscarTarifa(TipoEntrada tipo) {

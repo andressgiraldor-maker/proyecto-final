@@ -4,54 +4,50 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1897d635-130f-41be-846c-a44918178132" name="Changes" comment="app">
+    <list default="true" id="1897d635-130f-41be-846c-a44918178132" name="Changes" comment="app..">
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/Administrador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/application/CineApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/application/CineApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/ModelFactoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/controller/ModelFactoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/Administrador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/Administrador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/Asiento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/Asiento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/Cine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/Cine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/Clasificacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/Clasificacion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/Cliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/Deshabilitable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/Deshabilitable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/Entrada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/Entrada.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/EstadoAsiento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/EstadoAsiento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/EstadoFuncion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/EstadoFuncion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/EstadoPelicula.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/EstadoPelicula.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/EstadoSala.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/EstadoSala.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/EstadoVenta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/EstadoVenta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/Funcion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/Funcion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/Genero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/Genero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/Operador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/Operador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/Pelicula.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/Pelicula.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/Persona.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/Persona.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/ReporteOcupacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/ReporteOcupacion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/Sala.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/Sala.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/Tarifa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/Tarifa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/TipoCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/TipoCliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/TipoEntrada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/TipoEntrada.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/Venta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/Venta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/viewController/AsientosViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/viewController/AsientosViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/viewController/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/viewController/MainViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/viewController/PeliculasViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/viewController/PeliculasViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/viewController/PersonasViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/viewController/PersonasViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/viewController/SalasViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/viewController/SalasViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Cine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Cine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/uniquindio/edu/co/hello-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo/view/asientos-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/uniquindio/edu/co/view/asientos-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo/view/main-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/uniquindio/edu/co/view/main-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo/view/peliculas-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/uniquindio/edu/co/view/peliculas-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo/view/personas-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/uniquindio/edu/co/view/personas-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo/view/salas-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/uniquindio/edu/co/view/salas-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/demo/model/AdministradorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/AdministradorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/demo/model/AsientoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/AsientoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/demo/model/CineTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/CineTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/demo/model/ClienteTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/ClienteTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/demo/model/FuncionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/FuncionTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/demo/model/OperadorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/OperadorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/demo/model/PeliculaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/PeliculaTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/demo/model/SalaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/SalaTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/demo/model/VentaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/VentaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/controller/ModelFactoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/controller/ModelFactoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/Administrador.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/Asiento.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/Cine.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/Clasificacion.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/Cliente.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/Deshabilitable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/Entrada.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/EstadoAsiento.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/EstadoFuncion.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/EstadoPelicula.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/EstadoSala.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/EstadoVenta.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/Funcion.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/Genero.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/Operador.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/Pelicula.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/Persona.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/ReporteOcupacion.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/Sala.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/Tarifa.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/TipoCliente.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/TipoEntrada.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/model/Venta.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/viewController/AsientosViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/viewController/AsientosViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/viewController/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/viewController/MainViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/viewController/PeliculasViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/viewController/PeliculasViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/viewController/PersonasViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/viewController/PersonasViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/viewController/SalasViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniquindio/edu/co/viewController/SalasViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/uniquindio/edu/co/view/peliculas-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/uniquindio/edu/co/view/peliculas-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/uniquindio/edu/co/view/salas-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/uniquindio/edu/co/view/salas-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/AdministradorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/AdministradorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/AsientoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/AsientoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/CineTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/CineTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/ClienteTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/ClienteTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/FuncionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/FuncionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/OperadorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/OperadorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/PeliculaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/PeliculaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/SalaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uniquindio/edu/co/model/SalaTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,10 +58,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Enum" />
         <option value="Record" />
         <option value="module-info" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -98,62 +94,65 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
+      <entry key="MS100" value="4.687833803888321E-15" />
+      <entry key="MS500" value="0.0013620543616703182" />
+      <entry key="S2" value="0.19210978266129297" />
+      <entry key="S5" value="0.5215589474094057" />
+      <entry key="S10" value="0.8464907038887879" />
+      <entry key="S30" value="2.145097723570024" />
+      <entry key="S60" value="3.177715559495451" />
+      <entry key="M2" value="3.958951607973438" />
+      <entry key="M5" value="4.551944686682235" />
+      <entry key="M10" value="4.8908963766404145" />
+      <entry key="M15" value="5.2294724027353094" />
+      <entry key="M30" value="6.219939760367205" />
+      <entry key="H1" value="7.55993569141419" />
+      <entry key="H2" value="8.837968019955229" />
+      <entry key="H4" value="9.769659409150236" />
+      <entry key="D1" value="10.76960464439906" />
+      <entry key="W1" value="10.966394149707318" />
+    </decayedCancelled>
+    <decayedSelected>
       <entry key="MS100" value="1.0" />
       <entry key="MS500" value="1.0" />
       <entry key="S2" value="1.0" />
       <entry key="S5" value="1.0" />
       <entry key="S10" value="1.0" />
       <entry key="S30" value="1.0" />
-      <entry key="S60" value="1.000000000000145" />
-      <entry key="M2" value="1.0000005433175938" />
-      <entry key="M5" value="1.0053455088240304" />
-      <entry key="M10" value="1.1320369490990543" />
-      <entry key="M15" value="1.403151300705893" />
-      <entry key="M30" value="2.32720440418911" />
-      <entry key="H1" value="3.627684811148106" />
-      <entry key="H2" value="4.878607200997747" />
-      <entry key="H4" value="5.792447830126067" />
-      <entry key="D1" value="6.773844514186267" />
-      <entry key="W1" value="6.967012267807982" />
-    </decayedCancelled>
-    <decayedSelected>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="0.0" />
-      <entry key="S2" value="0.0" />
-      <entry key="S5" value="0.0" />
-      <entry key="S10" value="0.0" />
-      <entry key="S30" value="0.0" />
-      <entry key="S60" value="0.0" />
-      <entry key="M2" value="0.0" />
-      <entry key="M5" value="0.0" />
-      <entry key="M10" value="0.0" />
-      <entry key="M15" value="0.0" />
-      <entry key="M30" value="0.0" />
-      <entry key="H1" value="0.0" />
-      <entry key="H2" value="0.0" />
-      <entry key="H4" value="0.0" />
-      <entry key="D1" value="0.0" />
-      <entry key="W1" value="0.0" />
+      <entry key="S60" value="1.0" />
+      <entry key="M2" value="1.0" />
+      <entry key="M5" value="1.0" />
+      <entry key="M10" value="1.0" />
+      <entry key="M15" value="1.0" />
+      <entry key="M30" value="1.0" />
+      <entry key="H1" value="1.0" />
+      <entry key="H2" value="1.0" />
+      <entry key="H4" value="1.0" />
+      <entry key="D1" value="1.0" />
+      <entry key="W1" value="1.0" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.9265880618903709" />
-      <entry key="MS500" value="0.9848664428955506" />
-      <entry key="S2" value="0.9961949481330542" />
-      <entry key="S5" value="0.9984762383082793" />
-      <entry key="S10" value="0.9992378287015956" />
-      <entry key="S30" value="0.999745878328178" />
-      <entry key="S60" value="0.9998729310909769" />
-      <entry key="M2" value="0.9999370005450813" />
-      <entry key="M5" value="1.0052978936081414" />
-      <entry key="M10" value="1.1317943545488791" />
-      <entry key="M15" value="1.4027207183169794" />
-      <entry key="M30" value="2.3266090519153244" />
-      <entry key="H1" value="3.6271728592548684" />
-      <entry key="H2" value="4.878264080704228" />
-      <entry key="H4" value="5.792247392384966" />
-      <entry key="D1" value="6.7738062536179475" />
-      <entry key="W1" value="6.967006669884586" />
+      <entry key="MS100" value="1.2390899733581594E-10" />
+      <entry key="MS500" value="0.010513954571706341" />
+      <entry key="S2" value="0.4129669209560311" />
+      <entry key="S5" value="1.0248098153248197" />
+      <entry key="S10" value="1.5322444011880512" />
+      <entry key="S30" value="2.9801223541112165" />
+      <entry key="S60" value="4.072670152217476" />
+      <entry key="M2" value="4.897951005370956" />
+      <entry key="M5" value="5.524976226610847" />
+      <entry key="M10" value="5.876730448887383" />
+      <entry key="M15" value="6.219657885802712" />
+      <entry key="M30" value="7.2146001141794756" />
+      <entry key="H1" value="8.55703655673147" />
+      <entry key="H2" value="9.83642684312059" />
+      <entry key="H4" value="10.76885866696479" />
+      <entry key="D1" value="11.769466136136865" />
+      <entry key="W1" value="11.966374225545762" />
     </decayedShown>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1,
@@ -169,6 +168,7 @@
     "Application.CineApplication.executor": "Run",
     "Application.Main.executor": "Run",
     "Application.uniquindio.edu.co.application.CineApplication.executor": "Run",
+    "JUnit.CineTest.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -196,7 +196,7 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.uniquindio.edu.co.application.CineApplication">
-    <configuration name="CineApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="CineApplication" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.demo.application.CineApplication" />
       <module name="empresaJFX" />
       <extension name="coverage">
@@ -235,11 +235,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CineTest" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+      <module name="empresaJFX" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="uniquindio.edu.co.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="uniquindio.edu.co.model" />
+      <option name="MAIN_CLASS_NAME" value="uniquindio.edu.co.model.CineTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea --add-opens cine/uniquindio.edu.co.model=ALL-UNNAMED,org.junit.platform.commons,org.junit.jupiter.engine --add-opens cine/model=ALL-UNNAMED,org.junit.platform.commons,org.junit.jupiter.engine" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.CineApplication" />
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.uniquindio.edu.co.application.CineApplication" />
+      <item itemvalue="JUnit.CineTest" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.uniquindio.edu.co.application.CineApplication" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.CineApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -274,7 +296,15 @@
       <option name="project" value="LOCAL" />
       <updated>1794723191578</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="app..">
+      <option name="closed" value="true" />
+      <created>1794755852021</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1794755852021</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -306,7 +336,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Merge remote-tracking branch 'origin/dev_yeffersonlrodrigueza' into dev_sebastian-arcila&#10;&#10;# Conflicts:&#10;#&#9;.idea/misc.xml&#10;#&#9;.idea/vcs.xml&#10;#&#9;pom.xml&#10;#&#9;src/main/java/module-info.java" />
     <MESSAGE value="app" />
-    <option name="LAST_COMMIT_MESSAGE" value="app" />
+    <MESSAGE value="app.." />
+    <option name="LAST_COMMIT_MESSAGE" value="app.." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
