@@ -1,21 +1,16 @@
-/**
- * Clase para probar los metodos de adminitrador
- * @author Área de programación UQ
- * @since 2023-08
- *
- * Licencia GNU/GPL V3.0 (https://raw.githubusercontent.com/grid-uq/poo/main/LICENSE)
- */
 package uniquindio.edu.co.model;
 
-import org.junit.jupiter.api.Test;
+import model.Administrador;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class AdministradorTest {
+
     Administrador admin = new Administrador("123456", "andres", "3456787654");
 
     @Test
     void obtenerRol() {
-         assertEquals("ADMINISTRADOR", admin.obtenerRol());
+        assertEquals("ADMINISTRADOR", admin.obtenerRol());
     }
 }

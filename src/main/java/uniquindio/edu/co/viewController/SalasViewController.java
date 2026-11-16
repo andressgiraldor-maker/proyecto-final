@@ -1,9 +1,8 @@
 package uniquindio.edu.co.viewController;
 
-
 import uniquindio.edu.co.controller.ModelFactoryController;
-import uniquindio.edu.co.model.EstadoSala;
-import uniquindio.edu.co.model.Sala;
+import model.EstadoSala;
+import model.Sala;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -63,7 +62,7 @@ public class SalasViewController
         colCodigo.setCellValueFactory(new PropertyValueFactory<>("codigo"));
         colNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
         colCapacidad.setCellValueFactory(new PropertyValueFactory<>("capacidad"));
-        colEstado.setCellValueFactory(new PropertyValueFactory<>("estado"));
+        colEstado.setCellValueFactory(new PropertyValueFactory<>("estadoSala"));
 
         tblSalas.getSelectionModel().selectedItemProperty().addListener((observable, anterior, nueva) ->
         {
@@ -86,7 +85,7 @@ public class SalasViewController
             int filas = leerEntero(txtFilas, "filas");
             int columnas = leerEntero(txtColumnas, "columnas");
 
-            Sala sala = new Sala(codigo, nombre);
+            Sala sala = new Sala(codigo, nombre, filas * columnas, EstadoSala.DISPONIBLE);
             sala.generarAsientos(filas, columnas);
 
             modelFactoryController.registrarSala(sala);
@@ -94,7 +93,7 @@ public class SalasViewController
             deseleccionar();
             recargarTabla();
         }
-        catch (IllegalArgumentException | IllegalStateException e)
+        catch (Exception e)
         {
             mostrarAlerta(Alert.AlertType.ERROR, e.getMessage());
         }
@@ -114,15 +113,15 @@ public class SalasViewController
             String codigo = salaSeleccionada.getCodigo();
             String nombre = leerTexto(txtNombre, "nombre");
 
-            Sala sala = new Sala(codigo, nombre);
-            sala.setEstado(salaSeleccionada.getEstado());
+            Sala sala = new Sala(codigo, nombre, salaSeleccionada.getCapacidad(), salaSeleccionada.getEstadoSala());
+            sala.setListSalaAsientos(salaSeleccionada.getListSalaAsientos());
 
             modelFactoryController.modificarSala(sala);
             mostrarAlerta(Alert.AlertType.INFORMATION, "Sala modificada correctamente");
             deseleccionar();
             recargarTabla();
         }
-        catch (IllegalArgumentException | IllegalStateException e)
+        catch (Exception e)
         {
             mostrarAlerta(Alert.AlertType.ERROR, e.getMessage());
         }
@@ -144,7 +143,29 @@ public class SalasViewController
             deseleccionar();
             recargarTabla();
         }
-        catch (IllegalArgumentException | IllegalStateException e)
+        catch (Exception e)
+        {
+            mostrarAlerta(Alert.AlertType.ERROR, e.getMessage());
+        }
+    }
+
+    @FXML
+    private void habilitarSala()
+    {
+        if (salaSeleccionada == null)
+        {
+            mostrarAlerta(Alert.AlertType.WARNING, "Seleccione una sala de la tabla");
+            return;
+        }
+
+        try
+        {
+            modelFactoryController.habilitarSala(salaSeleccionada.getCodigo());
+            mostrarAlerta(Alert.AlertType.INFORMATION, "Sala habilitada correctamente");
+            deseleccionar();
+            recargarTabla();
+        }
+        catch (Exception e)
         {
             mostrarAlerta(Alert.AlertType.ERROR, e.getMessage());
         }
@@ -166,7 +187,7 @@ public class SalasViewController
             deseleccionar();
             recargarTabla();
         }
-        catch (IllegalArgumentException | IllegalStateException e)
+        catch (Exception e)
         {
             mostrarAlerta(Alert.AlertType.ERROR, e.getMessage());
         }

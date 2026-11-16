@@ -1,12 +1,13 @@
 package uniquindio.edu.co.viewController;
 
 import uniquindio.edu.co.controller.ModelFactoryController;
-import uniquindio.edu.co.model.Funcion;
-import uniquindio.edu.co.model.Pelicula;
-import uniquindio.edu.co.model.Sala;
-import uniquindio.edu.co.model.Tarifa;
-import uniquindio.edu.co.model.TipoEntrada;
-import uniquindio.edu.co.model.Venta;
+import model.EstadoFuncion;
+import model.Funcion;
+import model.Pelicula;
+import model.Sala;
+import model.Tarifa;
+import model.TipoEntrada;
+import model.Venta;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -105,8 +106,8 @@ public class MainViewController
 
         for (Pelicula pelicula : peliculas)
         {
-            String texto = pelicula.getNombre() + " | " + pelicula.getGenero() + " | "
-                    + pelicula.getDuracionMinutos() + " min | " + pelicula.getClasificacion();
+            String texto = pelicula.getNombre() + " | " + pelicula.getGeneroPelicula() + " | "
+                    + pelicula.getDuracionMinutos() + " min | " + pelicula.getClasificacionPelicula();
             lstPeliculas.getItems().add(texto);
         }
     }
@@ -123,8 +124,6 @@ public class MainViewController
             lstFunciones.getItems().add(texto);
         }
     }
-
-    // ===== NUEVO: REPORTES / VENTAS / FUNCIONES / TARIFAS =====
 
     private void actualizarReportes()
     {
@@ -150,16 +149,20 @@ public class MainViewController
         d1.setHeaderText("Codigo venta:"); String codVenta = d1.showAndWait().orElse(null);
         TextInputDialog d2 = new TextInputDialog("F001");
         d2.setHeaderText("Codigo funcion:"); String codFuncion = d2.showAndWait().orElse(null);
-        TextInputDialog d3 = new TextInputDialog("A1");
-        d3.setHeaderText("Asiento (A1):"); String codAsiento = d3.showAndWait().orElse(null);
+        // CAMBIO: ahora pide varios asientos separados por coma
+        TextInputDialog d3 = new TextInputDialog("A1,A2");
+        d3.setHeaderText("Asientos (ej: A1,A2,A3):"); String codAsientos = d3.showAndWait().orElse(null);
         TextInputDialog d4 = new TextInputDialog("123");
         d4.setHeaderText("ID cliente:"); String idCliente = d4.showAndWait().orElse(null);
         ChoiceDialog<TipoEntrada> d5 = new ChoiceDialog<>(TipoEntrada.GENERAL, TipoEntrada.values());
         d5.setHeaderText("Tipo entrada:"); TipoEntrada tipo = d5.showAndWait().orElse(null);
-        if (codVenta == null || codFuncion == null || codAsiento == null || idCliente == null || tipo == null) return;
+        if (codVenta == null || codFuncion == null || codAsientos == null || idCliente == null || tipo == null) return;
         try {
-            Venta v = modelFactoryController.venderEntrada(codVenta, codFuncion, codAsiento, idCliente, tipo);
-            mostrarAlerta("Venta exitosa! Valor: " + v.getValorPagado());
+            // CAMBIO: ahora usa venderVariasEntradas, no venderEntrada
+            List<Venta> ventas = modelFactoryController.venderVariasEntradas(codVenta, codFuncion, codAsientos, idCliente, tipo);
+            double total = 0;
+            for (Venta v : ventas) total += v.getValorPagado();
+            mostrarAlerta("Venta exitosa! Entradas: " + ventas.size() + " | Asientos: " + codAsientos + " | Total: $" + total);
             recargarListas();
             actualizarReportes();
         } catch (Exception e) {
@@ -176,7 +179,7 @@ public class MainViewController
         if (cod == null) return;
         try {
             modelFactoryController.cancelarVenta(cod);
-            mostrarAlerta("Venta cancelada, asiento liberado!");
+            mostrarAlerta("Venta cancelada, asientos liberados!");
             recargarListas();
             actualizarReportes();
         } catch (Exception e) { mostrarAlerta("ERROR: " + e.getMessage()); }
@@ -202,7 +205,7 @@ public class MainViewController
             Pelicula p = modelFactoryController.buscarPelicula(codPeli);
             Sala s = modelFactoryController.buscarSala(codSala);
             if (p == null || s == null) throw new Exception("Pelicula o sala no existe");
-            Funcion f = new Funcion(cod, p, s, LocalDate.parse(fechaStr), LocalTime.parse(horaStr), Double.parseDouble(valorStr));
+            Funcion f = new Funcion(cod, LocalDate.parse(fechaStr), LocalTime.parse(horaStr), Double.parseDouble(valorStr), EstadoFuncion.PROGRAMADA, p, s);
             modelFactoryController.programarFuncion(f);
             mostrarAlerta("Funcion programada!");
             recargarListas();

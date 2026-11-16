@@ -48,6 +48,7 @@
             <Button fx:id="btnRegistrar" mnemonicParsing="false" onAction="#registrarSala" text="Registrar" />
             <Button mnemonicParsing="false" onAction="#modificarSala" text="Modificar" />
             <Button mnemonicParsing="false" onAction="#deshabilitarSala" text="Deshabilitar" />
+            <Button mnemonicParsing="false" onAction="#habilitarSala" text="Habilitar" />
             <Button mnemonicParsing="false" onAction="#eliminarSala" text="Eliminar" />
             <Button mnemonicParsing="false" onAction="#gestionarAsientos" text="Gestionar asientos" />
             <Button mnemonicParsing="false" onAction="#deseleccionar" text="Deseleccionar" />

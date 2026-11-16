@@ -1,12 +1,11 @@
 package uniquindio.edu.co.viewController;
 
-
 import uniquindio.edu.co.controller.ModelFactoryController;
-import uniquindio.edu.co.model.Administrador;
-import uniquindio.edu.co.model.Cliente;
-import uniquindio.edu.co.model.Operador;
-import uniquindio.edu.co.model.Persona;
-import uniquindio.edu.co.model.TipoCliente;
+import model.Administrador;
+import model.Cliente;
+import model.Operador;
+import model.Persona;
+import model.TipoCliente;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
@@ -131,7 +130,7 @@ public class PersonasViewController
             deseleccionar();
             recargarTabla();
         }
-        catch (IllegalArgumentException | IllegalStateException e)
+        catch (Exception e)
         {
             mostrarAlerta(Alert.AlertType.ERROR, e.getMessage());
         }
@@ -165,7 +164,7 @@ public class PersonasViewController
             deseleccionar();
             recargarTabla();
         }
-        catch (IllegalArgumentException | IllegalStateException e)
+        catch (Exception e)
         {
             mostrarAlerta(Alert.AlertType.ERROR, e.getMessage());
         }
@@ -187,7 +186,7 @@ public class PersonasViewController
             deseleccionar();
             recargarTabla();
         }
-        catch (IllegalArgumentException | IllegalStateException e)
+        catch (Exception e)
         {
             mostrarAlerta(Alert.AlertType.ERROR, e.getMessage());
         }

@@ -53,6 +53,7 @@
             <Button fx:id="btnRegistrar" mnemonicParsing="false" onAction="#registrarPelicula" text="Registrar" />
             <Button mnemonicParsing="false" onAction="#modificarPelicula" text="Modificar" />
             <Button mnemonicParsing="false" onAction="#deshabilitarPelicula" text="Deshabilitar" />
+            <Button mnemonicParsing="false" onAction="#habilitarPelicula" text="Habilitar" />
             <Button mnemonicParsing="false" onAction="#eliminarPelicula" text="Eliminar" />
             <Button mnemonicParsing="false" onAction="#deseleccionar" text="Deseleccionar" />
          </children>

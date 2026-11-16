@@ -39,7 +39,6 @@ public class Cine {
         this.listCineClientes = new ArrayList<>();
         this.listCineOperadores = new ArrayList<>();
         this.listCineTarifas = new ArrayList<>();
-        // Tarifas por defecto - segun TU TipoEntrada real
         listCineTarifas.add(new Tarifa(TipoEntrada.GENERAL, 15000));
         listCineTarifas.add(new Tarifa(TipoEntrada.ESTUDIANTE, 12000));
         listCineTarifas.add(new Tarifa(TipoEntrada.NINO, 10000));
@@ -70,6 +69,12 @@ public class Cine {
         if (p != null) p.deshabilitar();
     }
 
+    // ===== NUEVO 1: HABILITAR PELICULA =====
+    public void habilitarPelicula(String codigo) {
+        Pelicula p = buscarPelicula(codigo);
+        if (p != null) p.habilitar();
+    }
+
     // ===== SALAS - Administrador =====
     public void registrarSala(Sala sala) throws CodigoDuplicadoException {
         if (buscarSala(sala.getCodigo()) != null) {
@@ -90,6 +95,12 @@ public class Cine {
     public void deshabilitarSala(String codigo) {
         Sala s = buscarSala(codigo);
         if (s != null) s.deshabilitar();
+    }
+
+    // ===== NUEVO 1: HABILITAR SALA =====
+    public void habilitarSala(String codigo) {
+        Sala s = buscarSala(codigo);
+        if (s != null) s.habilitar();
     }
 
     // ===== PERSONAS =====
@@ -153,19 +164,53 @@ public class Cine {
         double valor = calcularValorEntrada(funcion, tipo);
 
         asiento.ocupar();
-        // Venta de 7 argumentos - el estado ACTIVA se pone adentro de Venta
         Venta venta = new Venta(codigo, cliente, funcion, asiento, tipo, LocalDateTime.now(), valor);
         listCineVentas.add(venta);
         funcion.getListFuncionVentas().add(venta);
         return venta;
     }
 
+    // ===== NUEVO 3: VENDER VARIAS ENTRADAS EN UNA MISMA VENTA =====
+    // Ej: venderVariasEntradas("V002", cliente, funcion, GENERAL, ["A1","A2","A3"])
+    // Crea 3 ventas con el mismo codigo V002 = misma venta para el cliente
+    public List<Venta> venderVariasEntradas(String codigo, Cliente cliente, Funcion funcion, TipoEntrada tipo, List<String> codigosAsientos) throws Exception {
+        List<Venta> ventas = new ArrayList<>();
+        // Validar primero que TODOS estén libres, para no vender A1 y que A2 falle a la mitad
+        for (String cod : codigosAsientos) {
+            String limpio = cod.trim().toUpperCase();
+            char fila = limpio.charAt(0);
+            int numero = Integer.parseInt(limpio.substring(1));
+            Asiento a = funcion.buscarAsiento(fila, numero);
+            if (a == null) throw new AsientoOcupadoException("El asiento " + limpio + " no existe");
+            if (!a.estaDisponible()) throw new AsientoOcupadoException("El asiento " + limpio + " está OCUPADO");
+        }
+        for (String cod : codigosAsientos) {
+            String limpio = cod.trim().toUpperCase();
+            char fila = limpio.charAt(0);
+            int numero = Integer.parseInt(limpio.substring(1));
+            ventas.add(venderEntrada(codigo, cliente, funcion, tipo, fila, numero));
+        }
+        return ventas;
+    }
+
+    // ===== NUEVO 2 + 3: CANCELAR TODA LA VENTA JUNTA =====
+    // Antes cancelaba solo 1. Ahora cancela todas las que tengan el mismo codigo
     public void cancelarVenta(String codigoVenta) throws VentaNoEncontradaException {
-        Venta venta = buscarVenta(codigoVenta);
-        if (venta == null) {
+        List<Venta> ventas = buscarVentasPorCodigo(codigoVenta);
+        if (ventas.isEmpty()) {
             throw new VentaNoEncontradaException("La venta no existe: " + codigoVenta);
         }
-        venta.cancelar();
+        for (Venta v : ventas) {
+            v.cancelar();
+        }
+    }
+
+    public List<Venta> buscarVentasPorCodigo(String codigo) {
+        List<Venta> resultado = new ArrayList<>();
+        for (Venta v : listCineVentas) {
+            if (v.getCodigo().equals(codigo)) resultado.add(v);
+        }
+        return resultado;
     }
 
     // ===== CONSULTAS - Operador =====
@@ -193,6 +238,18 @@ public class Cine {
         Funcion f = buscarFuncion(codigoFuncion);
         if (f == null) throw new FuncionNoEncontradaException("Función no encontrada: " + codigoFuncion);
         return f.getAsientosDisponibles();
+    }
+
+    // ===== NUEVO 2: DETALLE A1 Disponible, A2 Ocupado... =====
+    public String consultarDetalleAsientosFuncion(String codigoFuncion) throws FuncionNoEncontradaException {
+        Funcion f = buscarFuncion(codigoFuncion);
+        if (f == null) throw new FuncionNoEncontradaException("Función no encontrada: " + codigoFuncion);
+        StringBuilder sb = new StringBuilder();
+        sb.append("Funcion ").append(f.getCodigo()).append(" - ").append(f.getPelicula().getNombre()).append("\n\n");
+        for (Asiento a : f.getListFuncionAsientos()) {
+            sb.append(a.getCodigo()).append(" ").append(a.estaDisponible() ? "Disponible" : "Ocupado").append("\n");
+        }
+        return sb.toString();
     }
 
     // ===== REPORTES =====

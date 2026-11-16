@@ -1,10 +1,10 @@
 package uniquindio.edu.co.viewController;
 
 import uniquindio.edu.co.controller.ModelFactoryController;
-import uniquindio.edu.co.model.Clasificacion;
-import uniquindio.edu.co.model.EstadoPelicula;
-import uniquindio.edu.co.model.Genero;
-import uniquindio.edu.co.model.Pelicula;
+import model.ClasificacionPelicula;
+import model.EstadoPelicula;
+import model.GeneroPelicula;
+import model.Pelicula;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -28,13 +28,13 @@ public class PeliculasViewController
     private TableColumn<Pelicula, String> colNombre;
 
     @FXML
-    private TableColumn<Pelicula, Genero> colGenero;
+    private TableColumn<Pelicula, GeneroPelicula> colGenero;
 
     @FXML
     private TableColumn<Pelicula, Integer> colDuracion;
 
     @FXML
-    private TableColumn<Pelicula, Clasificacion> colClasificacion;
+    private TableColumn<Pelicula, ClasificacionPelicula> colClasificacion;
 
     @FXML
     private TableColumn<Pelicula, EstadoPelicula> colEstado;
@@ -46,13 +46,13 @@ public class PeliculasViewController
     private TextField txtNombre;
 
     @FXML
-    private ComboBox<Genero> cmbGenero;
+    private ComboBox<GeneroPelicula> cmbGenero;
 
     @FXML
     private TextField txtDuracion;
 
     @FXML
-    private ComboBox<Clasificacion> cmbClasificacion;
+    private ComboBox<ClasificacionPelicula> cmbClasificacion;
 
     @FXML
     private Button btnRegistrar;
@@ -67,13 +67,13 @@ public class PeliculasViewController
 
         colCodigo.setCellValueFactory(new PropertyValueFactory<>("codigo"));
         colNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
-        colGenero.setCellValueFactory(new PropertyValueFactory<>("genero"));
+        colGenero.setCellValueFactory(new PropertyValueFactory<>("generoPelicula"));
         colDuracion.setCellValueFactory(new PropertyValueFactory<>("duracionMinutos"));
-        colClasificacion.setCellValueFactory(new PropertyValueFactory<>("clasificacion"));
-        colEstado.setCellValueFactory(new PropertyValueFactory<>("estado"));
+        colClasificacion.setCellValueFactory(new PropertyValueFactory<>("clasificacionPelicula"));
+        colEstado.setCellValueFactory(new PropertyValueFactory<>("estadoPelicula"));
 
-        cmbGenero.getItems().setAll(Genero.values());
-        cmbClasificacion.getItems().setAll(Clasificacion.values());
+        cmbGenero.getItems().setAll(GeneroPelicula.values());
+        cmbClasificacion.getItems().setAll(ClasificacionPelicula.values());
 
         tblPeliculas.getSelectionModel().selectedItemProperty().addListener((observable, anterior, nueva) ->
         {
@@ -97,7 +97,7 @@ public class PeliculasViewController
             deseleccionar();
             recargarTabla();
         }
-        catch (IllegalArgumentException | IllegalStateException e)
+        catch (Exception e)
         {
             mostrarAlerta(Alert.AlertType.ERROR, e.getMessage());
         }
@@ -115,13 +115,13 @@ public class PeliculasViewController
         try
         {
             Pelicula pelicula = construirPeliculaDesdeFormulario();
-            pelicula.setEstado(peliculaSeleccionada.getEstado());
+            pelicula.setEstadoPelicula(peliculaSeleccionada.getEstadoPelicula());
             modelFactoryController.modificarPelicula(pelicula);
             mostrarAlerta(Alert.AlertType.INFORMATION, "Pelicula modificada correctamente");
             deseleccionar();
             recargarTabla();
         }
-        catch (IllegalArgumentException | IllegalStateException e)
+        catch (Exception e)
         {
             mostrarAlerta(Alert.AlertType.ERROR, e.getMessage());
         }
@@ -143,7 +143,29 @@ public class PeliculasViewController
             deseleccionar();
             recargarTabla();
         }
-        catch (IllegalArgumentException | IllegalStateException e)
+        catch (Exception e)
+        {
+            mostrarAlerta(Alert.AlertType.ERROR, e.getMessage());
+        }
+    }
+
+    @FXML
+    private void habilitarPelicula()
+    {
+        if (peliculaSeleccionada == null)
+        {
+            mostrarAlerta(Alert.AlertType.WARNING, "Seleccione una pelicula de la tabla");
+            return;
+        }
+
+        try
+        {
+            modelFactoryController.habilitarPelicula(peliculaSeleccionada.getCodigo());
+            mostrarAlerta(Alert.AlertType.INFORMATION, "Pelicula habilitada correctamente");
+            deseleccionar();
+            recargarTabla();
+        }
+        catch (Exception e)
         {
             mostrarAlerta(Alert.AlertType.ERROR, e.getMessage());
         }
@@ -165,7 +187,7 @@ public class PeliculasViewController
             deseleccionar();
             recargarTabla();
         }
-        catch (IllegalArgumentException | IllegalStateException e)
+        catch (Exception e)
         {
             mostrarAlerta(Alert.AlertType.ERROR, e.getMessage());
         }
@@ -193,9 +215,9 @@ public class PeliculasViewController
         txtCodigo.setText(pelicula.getCodigo());
         txtCodigo.setDisable(true);
         txtNombre.setText(pelicula.getNombre());
-        cmbGenero.setValue(pelicula.getGenero());
+        cmbGenero.setValue(pelicula.getGeneroPelicula());
         txtDuracion.setText(String.valueOf(pelicula.getDuracionMinutos()));
-        cmbClasificacion.setValue(pelicula.getClasificacion());
+        cmbClasificacion.setValue(pelicula.getClasificacionPelicula());
         btnRegistrar.setDisable(true);
     }
 
@@ -203,8 +225,8 @@ public class PeliculasViewController
     {
         String codigo = txtCodigo.getText().trim();
         String nombre = txtNombre.getText().trim();
-        Genero genero = cmbGenero.getValue();
-        Clasificacion clasificacion = cmbClasificacion.getValue();
+        GeneroPelicula genero = cmbGenero.getValue();
+        ClasificacionPelicula clasificacion = cmbClasificacion.getValue();
         String textoDuracion = txtDuracion.getText().trim();
 
         if (codigo.isEmpty() || nombre.isEmpty() || genero == null || clasificacion == null || textoDuracion.isEmpty())
@@ -227,7 +249,7 @@ public class PeliculasViewController
             throw new IllegalArgumentException("La duracion debe ser mayor a cero");
         }
 
-        Pelicula pelicula = new Pelicula(codigo, nombre, genero, duracion, clasificacion);
+        Pelicula pelicula = new Pelicula(codigo, nombre, genero, duracion, clasificacion, EstadoPelicula.DISPONIBLE);
         return pelicula;
     }
 

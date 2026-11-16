@@ -1,8 +1,8 @@
 package uniquindio.edu.co.viewController;
 
 import uniquindio.edu.co.controller.ModelFactoryController;
-import uniquindio.edu.co.model.Asiento;
-import uniquindio.edu.co.model.EstadoAsiento;
+import model.Asiento;
+import model.EstadoAsiento;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;

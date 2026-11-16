@@ -1,11 +1,6 @@
-/**
- * Clase para probar los metodos de operador
- * @author Área de programación UQ
- * @since 2023-08
- *
- * Licencia GNU/GPL V3.0 (https://raw.githubusercontent.com/grid-uq/poo/main/LICENSE)
- */
 package uniquindio.edu.co.model;
+
+import model.Operador;
 
 import org.junit.jupiter.api.Test;
 
@@ -17,7 +12,6 @@ class OperadorTest {
 
     @Test
     void obtenerRol() {
-
         assertEquals("OPERADOR", operador.obtenerRol());
     }
 }
