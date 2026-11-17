@@ -28,6 +28,10 @@ public abstract class Persona {
         return identificacion;
     }
 
+    /**
+     * metodo para modifcar la identificacion de una persona
+     * @param identificacion de la persona
+     */
     public void setIdentificacion(String identificacion) {
         if (identificacion == null || identificacion.trim().isEmpty()) {
             throw new IllegalArgumentException("La identificacion no puede estar vacia");

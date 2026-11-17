@@ -21,7 +21,14 @@ public class Funcion {
     private Sala sala;
 
     /**
-     * UNICO constructor de la clase Funcion
+     * metodo constructor de la clas Funcion
+     * @param codigo de la funcion
+     * @param fecha de la funcion
+     * @param hora de la funcion
+     * @param valorBase de la funcion
+     * @param estadoFuncion de la funcion
+     * @param pelicula de la funcion
+     * @param sala de la funcion
      */
     public Funcion(String codigo, LocalDate fecha, LocalTime hora, double valorBase, EstadoFuncion estadoFuncion, Pelicula pelicula, Sala sala) {
         this.codigo = codigo;
@@ -34,8 +41,6 @@ public class Funcion {
         this.listFuncionAsientos = new ArrayList<>();
         this.listFuncionVentas = new ArrayList<>();
 
-        // Copia los asientos de la sala para esta funcion
-        // Se copian, no se usan los mismos, para que ocupar en una funcion no afecte a otra
         if (sala != null) {
             for (Asiento a : sala.getListSalaAsientos()) {
                 listFuncionAsientos.add(new Asiento(a.getCodigo(), a.getFila(), a.getNumero(), EstadoAsiento.DISPONIBLE));
@@ -43,17 +48,29 @@ public class Funcion {
         }
     }
 
-    // ===== METODOS DEL DIAGRAMA =====
 
+    /**
+     * metodo para saber si una funcion esta programada
+     * @return
+     */
     public boolean estaProgramada() {
         return estadoFuncion == EstadoFuncion.PROGRAMADA;
     }
 
-    // Alias para que Cine viejo no falle, es lo mismo que estaProgramada()
+    /**
+     * metodo para saber si una funcion esta disponibles
+     * @return
+     */
     public boolean estaDisponible() {
         return estaProgramada();
     }
 
+    /**
+     * metodo para buscar un asiento por su fila y columna
+     * @param fila del asiento
+     * @param numero del asiento
+     * @return
+     */
     public Asiento buscarAsiento(char fila, int numero) {
         for (Asiento a : listFuncionAsientos) {
             if (a.getFila() == fila && a.getNumero() == numero) {
@@ -63,6 +80,10 @@ public class Funcion {
         return null;
     }
 
+    /**
+     * metodo para contar asientos disponibles que tenga la funcion
+     * @return
+     */
     public int contarAsientosDisponibles() {
         int total = 0;
         for (Asiento a : listFuncionAsientos) {
@@ -71,15 +92,27 @@ public class Funcion {
         return total;
     }
 
+    /**
+     * metodo para contar los asiento ocupados de la funcion
+     * @return
+     */
     public int contarAsientosOcupados() {
         return listFuncionAsientos.size() - contarAsientosDisponibles();
     }
 
+    /**
+     * metodo para calcular el porcentaje de ocupacion de una funcion
+     * @return
+     */
     public double calcularPorcentajeOcupacion() {
         if (listFuncionAsientos.isEmpty()) return 0;
         return (contarAsientosOcupados() * 100.0) / listFuncionAsientos.size();
     }
 
+    /**
+     * metodo para obtener los asientos disponibles en una lista
+     * @return
+     */
     public List<Asiento> getAsientosDisponibles() {
         List<Asiento> disponibles = new ArrayList<>();
         for (Asiento a : listFuncionAsientos) {

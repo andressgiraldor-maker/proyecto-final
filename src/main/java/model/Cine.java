@@ -15,10 +15,10 @@ import java.util.List;
 import java.util.Map;
 
 public class Cine {
-
+    //Atributos de la clase Cine
     private String nombre;
     private String direccion;
-
+//Relaciones de la clase cine
     private List<Funcion> listCineFunciones;
     private List<Venta> listCineVentas;
     private List<Pelicula> listCinePeliculas;
@@ -28,6 +28,11 @@ public class Cine {
     private List<Operador> listCineOperadores;
     private List<Tarifa> listCineTarifas;
 
+    /**
+     * metodo constructor de la clase Cine
+     * @param nombre del cine
+     * @param direccion del cine
+     */
     public Cine(String nombre, String direccion) {
         this.nombre = nombre;
         this.direccion = direccion;
@@ -46,6 +51,12 @@ public class Cine {
     }
 
     // ===== PELICULAS - Administrador =====
+
+    /**
+     * metodo para regsitraar pelicula en cine
+     * @param pelicula pelicula
+     * @throws CodigoDuplicadoException
+     */
     public void registrarPelicula(Pelicula pelicula) throws CodigoDuplicadoException {
         if (buscarPelicula(pelicula.getCodigo()) != null) {
             throw new CodigoDuplicadoException("Ya existe una película con código: " + pelicula.getCodigo());
@@ -53,6 +64,10 @@ public class Cine {
         listCinePeliculas.add(pelicula);
     }
 
+    /**
+     * metodo para modificar una pelicula
+     * @param pelicula pelicula
+     */
     public void modificarPelicula(Pelicula pelicula) {
         Pelicula actual = buscarPelicula(pelicula.getCodigo());
         if (actual != null) {
@@ -64,18 +79,29 @@ public class Cine {
         }
     }
 
+    /**
+     * metodo para deshbilitar una pelicula
+     * @param codigo de la pelicula
+     */
     public void deshabilitarPelicula(String codigo) {
         Pelicula p = buscarPelicula(codigo);
         if (p != null) p.deshabilitar();
     }
 
-    // ===== NUEVO 1: HABILITAR PELICULA =====
+    /**
+     * metodo para habilitar una sala
+     * @param codigo de la sala
+     */
     public void habilitarPelicula(String codigo) {
         Pelicula p = buscarPelicula(codigo);
         if (p != null) p.habilitar();
     }
 
-    // ===== SALAS - Administrador =====
+    /**
+     * metodo para regitrar una sala en cine
+     * @param sala sala
+     * @throws CodigoDuplicadoException
+     */
     public void registrarSala(Sala sala) throws CodigoDuplicadoException {
         if (buscarSala(sala.getCodigo()) != null) {
             throw new CodigoDuplicadoException("Ya existe una sala con código: " + sala.getCodigo());
@@ -83,6 +109,10 @@ public class Cine {
         listCineSalas.add(sala);
     }
 
+    /**
+     * metodo para modifcar una sala
+     * @param sala sala
+     */
     public void modificarSala(Sala sala) {
         Sala actual = buscarSala(sala.getCodigo());
         if (actual != null) {
@@ -92,18 +122,28 @@ public class Cine {
         }
     }
 
+    /**
+     * metodo para deshabiliatar una sala
+     * @param codigo de la sala
+     */
     public void deshabilitarSala(String codigo) {
         Sala s = buscarSala(codigo);
         if (s != null) s.deshabilitar();
     }
 
-    // ===== NUEVO 1: HABILITAR SALA =====
+    /**
+     * metodo para habilitar una sala
+     * @param codigo de la sala
+     */
     public void habilitarSala(String codigo) {
         Sala s = buscarSala(codigo);
         if (s != null) s.habilitar();
     }
 
-    // ===== PERSONAS =====
+    /**
+     * metodo para regustra un cliente
+     * @param cliente cliente
+     */
     public void registrarCliente(Cliente cliente) {
         if (buscarCliente(cliente.getIdentificacion()) == null) {
             listCineClientes.add(cliente);
@@ -111,6 +151,10 @@ public class Cine {
         }
     }
 
+    /**
+     * metodo para registrar un operador
+     * @param operador operador
+     */
     public void registrarOperador(Operador operador) {
         if (buscarOperador(operador.getIdentificacion()) == null) {
             listCineOperadores.add(operador);
@@ -118,17 +162,29 @@ public class Cine {
         }
     }
 
-    // ===== TARIFAS =====
+
+    /**
+     * metodo para registrar una tarifa en cine
+     * @param tarifa tarifa
+     */
     public void registrarTarifa(Tarifa tarifa) {
         listCineTarifas.removeIf(t -> t.tipoEntrada() == tarifa.tipoEntrada());
         listCineTarifas.add(tarifa);
     }
 
+    /**
+     * metodo para modifar una tarifa en cine
+     * @param tarifa tarifa
+     */
     public void modificarTarifa(Tarifa tarifa) {
         registrarTarifa(tarifa);
     }
 
-    // ===== FUNCIONES - Administrador =====
+    /**
+     * metodo para programar una funcion
+     * @param funcion funcion
+     * @throws SalaNoDisponibleException
+     */
     public void programarFuncion(Funcion funcion) throws SalaNoDisponibleException {
         if (!funcion.getSala().estaDisponible()) {
             throw new SalaNoDisponibleException("La sala está FUERA_DE_SERVICIO: " + funcion.getSala().getCodigo());
@@ -136,13 +192,31 @@ public class Cine {
         listCineFunciones.add(funcion);
     }
 
-    // ===== VENTAS - Operador =====
+    /**
+     * metodo para calcular el valor de una entrada
+     * @param funcion funcion
+     * @param tipo de entrada
+     * @return
+     */
     public double calcularValorEntrada(Funcion funcion, TipoEntrada tipo) {
         Tarifa tarifa = buscarTarifa(tipo);
         if (tarifa == null) return funcion.getValorBase();
         return tarifa.valor();
     }
 
+    /**
+     * metodo para vender una entrada
+     * @param codigo de la venta
+     * @param cliente de la venta
+     * @param funcion de la venta
+     * @param tipo de la venta
+     * @param fila de la venta
+     * @param numero de la venta
+     * @return
+     * @throws FuncionNoEncontradaException
+     * @throws SinAsientosDisponiblesException
+     * @throws AsientoOcupadoException
+     */
     public Venta venderEntrada(String codigo, Cliente cliente, Funcion funcion, TipoEntrada tipo, char fila, int numero)
             throws FuncionNoEncontradaException, SinAsientosDisponiblesException, AsientoOcupadoException {
 
@@ -170,9 +244,16 @@ public class Cine {
         return venta;
     }
 
-    // ===== NUEVO 3: VENDER VARIAS ENTRADAS EN UNA MISMA VENTA =====
-    // Ej: venderVariasEntradas("V002", cliente, funcion, GENERAL, ["A1","A2","A3"])
-    // Crea 3 ventas con el mismo codigo V002 = misma venta para el cliente
+    /**
+     * metodo para vender varias entradas
+     * @param codigo de la entrada
+     * @param cliente de la entrada
+     * @param funcion de la entrada
+     * @param tipo de entrada
+     * @param codigosAsientos de la entrada
+     * @return
+     * @throws Exception
+     */
     public List<Venta> venderVariasEntradas(String codigo, Cliente cliente, Funcion funcion, TipoEntrada tipo, List<String> codigosAsientos) throws Exception {
         List<Venta> ventas = new ArrayList<>();
         // Validar primero que TODOS estén libres, para no vender A1 y que A2 falle a la mitad
@@ -193,8 +274,11 @@ public class Cine {
         return ventas;
     }
 
-    // ===== NUEVO 2 + 3: CANCELAR TODA LA VENTA JUNTA =====
-    // Antes cancelaba solo 1. Ahora cancela todas las que tengan el mismo codigo
+    /**
+     * metodo para canelar una venta
+     * @param codigoVenta venta
+     * @throws VentaNoEncontradaException
+     */
     public void cancelarVenta(String codigoVenta) throws VentaNoEncontradaException {
         List<Venta> ventas = buscarVentasPorCodigo(codigoVenta);
         if (ventas.isEmpty()) {
@@ -205,6 +289,11 @@ public class Cine {
         }
     }
 
+    /**
+     * metodo para busacr una venta por su codigo
+     * @param codigo de la venta
+     * @return
+     */
     public List<Venta> buscarVentasPorCodigo(String codigo) {
         List<Venta> resultado = new ArrayList<>();
         for (Venta v : listCineVentas) {
@@ -213,7 +302,10 @@ public class Cine {
         return resultado;
     }
 
-    // ===== CONSULTAS - Operador =====
+    /**
+     * metodo para consultar peliculas disponibles
+     * @return
+     */
     public List<Pelicula> consultarPeliculasDisponibles() {
         List<Pelicula> resultado = new ArrayList<>();
         for (Pelicula p : listCinePeliculas) {
@@ -222,10 +314,19 @@ public class Cine {
         return resultado;
     }
 
+    /**
+     * metodo para consultar funciones
+     * @return
+     */
     public List<Funcion> consultarFunciones() {
         return new ArrayList<>(listCineFunciones);
     }
 
+    /**
+     * metodo para consultar las funciones por fecha
+     * @param fecha
+     * @return
+     */
     public List<Funcion> consultarFuncionesPorFecha(LocalDate fecha) {
         List<Funcion> resultado = new ArrayList<>();
         for (Funcion f : listCineFunciones) {
@@ -234,13 +335,24 @@ public class Cine {
         return resultado;
     }
 
+    /**
+     * metodo para consulatar asiento disponibles
+     * @param codigoFuncion de la funcion
+     * @return
+     * @throws FuncionNoEncontradaException
+     */
     public List<Asiento> consultarAsientosDisponibles(String codigoFuncion) throws FuncionNoEncontradaException {
         Funcion f = buscarFuncion(codigoFuncion);
         if (f == null) throw new FuncionNoEncontradaException("Función no encontrada: " + codigoFuncion);
         return f.getAsientosDisponibles();
     }
 
-    // ===== NUEVO 2: DETALLE A1 Disponible, A2 Ocupado... =====
+    /**
+     * metodo para consultar el detalle de asientos por funcion
+     * @param codigoFuncion de la funcion
+     * @return
+     * @throws FuncionNoEncontradaException
+     */
     public String consultarDetalleAsientosFuncion(String codigoFuncion) throws FuncionNoEncontradaException {
         Funcion f = buscarFuncion(codigoFuncion);
         if (f == null) throw new FuncionNoEncontradaException("Función no encontrada: " + codigoFuncion);
@@ -252,7 +364,10 @@ public class Cine {
         return sb.toString();
     }
 
-    // ===== REPORTES =====
+    /**
+     * metodo para contar las entradas mas vendidas
+     * @return
+     */
     public int contarEntradasVendidas() {
         int total = 0;
         for (Venta v : listCineVentas) {
@@ -261,6 +376,10 @@ public class Cine {
         return total;
     }
 
+    /**
+     * emtodo para calcular total de ingresos
+     * @return
+     */
     public double calcularTotalIngresos() {
         double total = 0;
         for (Venta v : listCineVentas) {
@@ -269,6 +388,10 @@ public class Cine {
         return total;
     }
 
+    /**
+     * metodo para obtener la pelicula mas vendida
+     * @return
+     */
     public Pelicula obtenerPeliculaMasVendida() {
         Map<Pelicula, Integer> conteo = new HashMap<>();
         for (Venta v : listCineVentas) {
@@ -284,6 +407,12 @@ public class Cine {
         return mayor;
     }
 
+    /**
+     * metodo para generar un reporte por ocupacion
+     * @param codigoFuncion funcion
+     * @return
+     * @throws FuncionNoEncontradaException
+     */
     public ReporteOcupacion generarReporteOcupacion(String codigoFuncion) throws FuncionNoEncontradaException {
         Funcion f = buscarFuncion(codigoFuncion);
         if (f == null) throw new FuncionNoEncontradaException("Función no encontrada: " + codigoFuncion);
@@ -295,49 +424,95 @@ public class Cine {
         );
     }
 
-    // ===== BUSCAR =====
+    /**
+     * metodo para buscar una persona
+     * @param identificacion de la persona
+     * @return
+     */
     public Persona buscarPersona(String identificacion) {
         for (Persona p : listCinePersonas) {
             if (p.getIdentificacion().equals(identificacion)) return p;
         }
         return null;
     }
+
+    /**
+     * metodo para busacr un cliente
+     * @param identificacion del cliente
+     * @return
+     */
     public Cliente buscarCliente(String identificacion) {
         for (Cliente c : listCineClientes) {
             if (c.getIdentificacion().equals(identificacion)) return c;
         }
         return null;
     }
+
+    /**
+     * metodo para busacr un operador por codigo
+     * @param identificacion del operador
+     * @return
+     */
     public Operador buscarOperador(String identificacion) {
         for (Operador o : listCineOperadores) {
             if (o.getIdentificacion().equals(identificacion)) return o;
         }
         return null;
     }
+
+    /**
+     * metodo para buscar una pelicula por su codigo
+     * @param codigo de la pelicula
+     * @return
+     */
     public Pelicula buscarPelicula(String codigo) {
         for (Pelicula p : listCinePeliculas) {
             if (p.getCodigo().equals(codigo)) return p;
         }
         return null;
     }
+
+    /**
+     * metodo para busacr una sala
+     * @param codigo de la sala
+     * @return
+     */
     public Sala buscarSala(String codigo) {
         for (Sala s : listCineSalas) {
             if (s.getCodigo().equals(codigo)) return s;
         }
         return null;
     }
+
+    /**
+     * metodo para busacr una funcion
+     * @param codigo de la funcion
+     * @return
+     */
     public Funcion buscarFuncion(String codigo) {
         for (Funcion f : listCineFunciones) {
             if (f.getCodigo().equals(codigo)) return f;
         }
         return null;
     }
+
+    /**
+     * metodo para buscar una venta por su codigo
+     * @param codigo de  la venta
+     * @return
+     */
     public Venta buscarVenta(String codigo) {
         for (Venta v : listCineVentas) {
             if (v.getCodigo().equals(codigo)) return v;
         }
         return null;
     }
+
+    /**
+     * metodo para buscar una tarifa
+     * @param tipo de entrada
+     * @return
+     */
     public Tarifa buscarTarifa(TipoEntrada tipo) {
         for (Tarifa t : listCineTarifas) {
             if (t.tipoEntrada() == tipo) return t;

@@ -4,12 +4,23 @@ public class Cliente extends Persona {
     private String gmail;
     private TipoCliente tipoCliente;
 
+    /**
+     * metodo constructor de la clase Cliente
+     * @param identificacion del cliente
+     * @param nombre del cliente
+     * @param gmail del cliente
+     * @param tipoCliente del cliente
+     */
     public Cliente(String identificacion, String nombre, String gmail, TipoCliente tipoCliente) {
         super(identificacion, nombre);
         this.gmail = gmail;
         this.tipoCliente = tipoCliente;
     }
 
+    /**
+     * metodo para obtener el rol de una cliente
+     * @return
+     */
     @Override
     public String obtenerRol() { return "CLIENTE"; }
 

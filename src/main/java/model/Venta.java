@@ -13,7 +13,16 @@ public class Venta {
     private double valorPagado;
     private EstadoVenta estadoVenta;
 
-    // Constructor de 7 argumentos - EL ESTADO NO SE PASA, SE PONE ADENTRO
+    /**
+     * metodo constructor de la clase Venta
+     * @param codigo de la venta
+     * @param cliente de la venta
+     * @param funcion de la venta
+     * @param asiento de la venta
+     * @param tipoEntrada de la vente
+     * @param fechaVenta de la venta
+     * @param valorPagado de la vente
+     */
     public Venta(String codigo, Cliente cliente, Funcion funcion, Asiento asiento, TipoEntrada tipoEntrada, LocalDateTime fechaVenta, double valorPagado) {
         this.codigo = codigo;
         this.cliente = cliente;
@@ -25,10 +34,17 @@ public class Venta {
         this.estadoVenta = EstadoVenta.ACTIVA; // <-- Aqui se pone, no en el constructor
     }
 
+    /**
+     * metodo para saber si una venta esta ctiva
+     * @return
+     */
     public boolean estaActiva() {
         return estadoVenta == EstadoVenta.ACTIVA;
     }
 
+    /**
+     * metodo para cancelar una venta
+     */
     public void cancelar() {
         this.estadoVenta = EstadoVenta.CANCELADA;
         if (asiento != null) {

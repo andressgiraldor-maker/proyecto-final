@@ -11,6 +11,13 @@ public class Sala implements Deshabilitable {
     private EstadoSala estadoSala;
     private List<Asiento> listSalaAsientos;
 
+    /**
+     * metodo constructor de la clase Sala
+     * @param codigo de la sala
+     * @param nombre de la sala
+     * @param capacidad de la sala
+     * @param estadoSala de la sala
+     */
     public Sala(String codigo, String nombre, int capacidad, EstadoSala estadoSala) {
         this.codigo = codigo;
         this.nombre = nombre;
@@ -19,37 +26,51 @@ public class Sala implements Deshabilitable {
         this.listSalaAsientos = new ArrayList<>();
     }
 
-    // ===== LOS 3 DE LA INTERFAZ Deshabilitable - TODOS CON @Override =====
+    /**
+     * metodo para habilitar una sala
+     */
     @Override
     public void habilitar() {
         this.estadoSala = EstadoSala.DISPONIBLE;
     }
 
+    /**
+     * metodo para dehabilitar una sala
+     */
     @Override
     public void deshabilitar() {
         this.estadoSala = EstadoSala.FUERA_DE_SERVICIO;
     }
 
+    /**
+     * metodo para saber si una sala esta deshabilitada
+     * @return
+     */
     @Override
     public boolean estaDeshabilitado() {
         return estadoSala == EstadoSala.FUERA_DE_SERVICIO;
     }
 
-    // ===== PROPIO DE Sala - SIN @Override =====
-    // Quitale el @Override a este, por eso te salia "Method does not override"
+    /**
+     * metodo para saber si una sala esta disponible
+     * @return
+     */
     public boolean estaDisponible() {
         return estadoSala == EstadoSala.DISPONIBLE;
     }
 
-    // ===== Generar asientos - ARREGLADO: Asiento ahora recibe 4 argumentos, no 5 =====
+    /**
+     * metodo para generar asientos (se multiplica filas por columnas)
+     * @param filas del asiento
+     * @param columnas del asiento
+     */
     public void generarAsientos(int filas, int columnas) {
         listSalaAsientos.clear();
         for (int f = 0; f < filas; f++) {
             char filaChar = (char) ('A' + f);
             for (int n = 1; n <= columnas; n++) {
                 String codigoAsiento = codigo + "-" + filaChar + n;
-                // ANTES (mal): new Asiento(codigoAsiento, filaChar, n, null, DISPONIBLE) -> 5 args
-                // AHORA (bien): 4 args
+
                 listSalaAsientos.add(new Asiento(codigoAsiento, filaChar, n, EstadoAsiento.DISPONIBLE));
             }
         }
